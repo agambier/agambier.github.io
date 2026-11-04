@@ -8,3 +8,5 @@ Site GitHub Pages de agambier.
 - `.well-known/assetlinks.json` : lien entre les apps Android et ce site (empreinte de la clé de signature).
 
 Publication : GitHub Pages, branche `main`, dossier racine (`.nojekyll` : pas de traitement Jekyll).
+
+Si une publication reste bloquée « en file d'attente » dans Actions, un nouveau commit sur `main` en relance une.
