@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101C26">
+<link rel="icon" href="/fitpacer/favicon.svg" type="image/svg+xml">
+<title>Manuel FitPacer</title>
+<script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+  <script type="module" crossorigin src="/fitpacer/assets/manuel-BT8HDYqg.js"></script>
+  <link rel="modulepreload" crossorigin href="/fitpacer/assets/version-B_ADmt2C.js">
+  <link rel="stylesheet" crossorigin href="/fitpacer/assets/version-CEnomOl5.css">
+  <link rel="stylesheet" crossorigin href="/fitpacer/assets/manuel-LjzBEpEU.css">
+<link rel="manifest" href="/fitpacer/manifest.webmanifest"></head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <button class="back" id="backBtn" type="button">‹ Retour</button>
+    <a class="brand" href="#accueil" aria-label="Manuel FitPacer, haut de page">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 27s-11-6.8-11-15.2A6.2 6.2 0 0 1 16 8a6.2 6.2 0 0 1 11 3.8C27 20.2 16 27 16 27z" fill="#e8434a"/><path d="M5.5 15.5h5l2-3.6 3 7.4 2.4-4.4h8.6" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      FitPacer <small>Manuel</small>
+    </a>
+    <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Rechercher" aria-label="Rechercher dans le manuel" autocomplete="off"></label>
+    <button class="tocBtn" id="tocBtn" type="button" aria-expanded="false" aria-controls="toc">Sommaire</button>
+  </div>
+</header>
+
+<div class="shell">
+<nav class="toc" id="toc" aria-label="Sommaire">
+  <span class="lbl">Sommaire</span>
+  <ol id="tocList"></ol>
+  <p class="ver">Manuel de la version <span class="appVer"></span></p>
+</nav>
+
+<main id="accueil">
+  <div class="hero">
+    <div>
+      <span class="eyebrow">Manuel d’utilisation</span>
+      <h1>Votre séance, cadencée seconde par seconde</h1>
+      <p class="lede">FitPacer est un <b>compagnon d’entraînement</b> pour le téléphone. Vous lui donnez une séance préparée avec une IA, il vous guide pendant l’effort (chrono, répétitions, vitesse et pente, bips, voix, fréquence cardiaque de la montre), puis il produit un <b>rapport</b> à renvoyer à l’IA pour préparer la suite.</p>
+    </div>
+    <div class="hero-phones">
+      <figure class="shot">
+    <button type="button" data-cap="L’écran Programme, avant de démarrer." aria-label="Agrandir : L’écran Programme, avant de démarrer.">
+      <img class="d" src="/fitpacer/assets/program-CNtOZl0m.webp" alt="L’écran Programme, avant de démarrer." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/program-s53OIo8K.webp" alt="L’écran Programme, avant de démarrer." loading="lazy" decoding="async">
+    </button>
+  </figure>
+      <figure class="shot">
+    <button type="button" data-cap="Pendant la séance : vitesse, pente, plage de fréquence cardiaque et chrono." aria-label="Agrandir : Pendant la séance : vitesse, pente, plage de fréquence cardiaque et chrono.">
+      <img class="d" src="/fitpacer/assets/run-zone-DFnd1W_g.webp" alt="Pendant la séance : vitesse, pente, plage de fréquence cardiaque et chrono." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/run-zone-BqBi9DQI.webp" alt="Pendant la séance : vitesse, pente, plage de fréquence cardiaque et chrono." loading="lazy" decoding="async">
+    </button>
+  </figure>
+      <figure class="shot">
+    <button type="button" data-cap="Le bilan de fin de séance." aria-label="Agrandir : Le bilan de fin de séance.">
+      <img class="d" src="/fitpacer/assets/done-n0Lp_scN.webp" alt="Le bilan de fin de séance." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/done-CXujXP6H.webp" alt="Le bilan de fin de séance." loading="lazy" decoding="async">
+    </button>
+  </figure>
+    </div>
+  </div>
+
+  <div class="flow">
+    <a href="#ia"><b>Préparer</b><span>L’IA écrit la séance au format FitPacer. Vous la collez dans l’app.</span><i>Voir la section 02 ›</i></a>
+    <a href="#seance"><b>Faire la séance</b><span>L’app vous guide étape par étape, montre connectée ou non.</span><i>Voir la section 06 ›</i></a>
+    <a href="#bilan"><b>Transmettre</b><span>Notez votre ressenti, puis envoyez le rapport à l’IA.</span><i>Voir la section 07 ›</i></a>
+  </div>
+
+  <p class="empty" id="empty" hidden>Aucune section ne correspond à cette recherche. Essayez un autre mot, par exemple « montre », « repos » ou « rapport ».</p>
+
+<!-- ============================================================ -->
+<section class="doc" id="installer" data-title="Installer l’app">
+  <div class="sec-head"><span class="n">01</span><h2>Installer l’app</h2></div>
+  <p class="intro">FitPacer est une <b>application web</b> : elle s’ouvre dans le navigateur, puis s’installe sur l’écran d’accueil comme une app normale. Une fois installée, elle fonctionne <b>sans connexion Internet</b>, ce qui est pratique dans une salle de sport mal couverte.</p>
+  <div class="row">
+    <div class="prose">
+      <h3>Sur Android : l’app FitPacer (recommandé)</h3>
+      <p>FitPacer existe en <b>application Android</b> à installer soi-même (elle n’est pas sur le Play Store).</p>
+      <ol class="steps">
+        <li><span>Sur le téléphone, touchez ce lien : <a href="https://agambier.github.io/apk/fitpacer.apk">agambier.github.io/apk/fitpacer.apk</a>. Si Chrome prévient que le fichier peut être dangereux, choisissez <b>Télécharger quand même</b>.</span></li>
+        <li><span>Ouvrez le fichier téléchargé, puis <b>Installer</b>. Android peut demander d’autoriser Chrome à installer des applications, et Play Protect d’<b>installer quand même</b> : l’app ne vient pas du Play Store.</span></li>
+      </ol>
+      <p>L’app ouvre FitPacer en plein écran et se met à jour toute seule. <a href="https://agambier.github.io/apk/fitpacer-dev.apk">fitpacer-dev.apk</a> installe <b>FitPacer DEV</b> (icône marquée « DEV »), la version d’essai des nouveautés.</p>
+      <h3>Sur Android, sans l’app</h3>
+      <ol class="steps">
+        <li><span>Ouvrez <b>Chrome</b> et allez sur <a href="https://agambier.github.io/fitpacer/" target="_blank" rel="noopener">agambier.github.io/fitpacer</a>.</span></li>
+        <li><span>Touchez le menu <kbd>⋮</kbd> en haut à droite, puis <b>Installer l’application</b> (ou <b>Ajouter à l’écran d’accueil</b>).</span></li>
+        <li><span>Lancez FitPacer depuis son icône. Une fenêtre de bienvenue s’affiche au premier lancement.</span></li>
+      </ol>
+      <div class="note tip"><span class="t">Astuce</span><p>Brave fonctionne aussi. Pour la montre, il faut activer une option : voir <a href="#montre">Connecter la montre</a>.</p></div>
+      <h3>Sur iPhone ou iPad</h3>
+      <p>Dans Safari : bouton <b>Partager</b>, puis <b>Sur l’écran d’accueil</b>. Tout fonctionne, <b>sauf la connexion de la montre</b> : iOS ne permet pas le Bluetooth depuis une page web. La séance se déroule normalement, sans fréquence cardiaque dans l’app.</p>
+      <h3>Mises à jour</h3>
+      <p>Ce manuel est aussi dans l’app : menu <kbd>☰</kbd> › <b>Aide</b>. Il s’affiche même sans connexion.</p>
+      <p>L’app se met à jour seule quand le téléphone est connecté. Après une mise à jour, la fenêtre <b>Quoi de neuf ?</b> résume les changements en quelques lignes.</p>
+    </div>
+    <figure class="shot">
+    <button type="button" data-cap="La fenêtre de bienvenue, au premier lancement." aria-label="Agrandir : La fenêtre de bienvenue, au premier lancement.">
+      <img class="d" src="/fitpacer/assets/welcome-ljU3w8FQ.webp" alt="La fenêtre de bienvenue, au premier lancement." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/welcome-BCiEZRmi.webp" alt="La fenêtre de bienvenue, au premier lancement." loading="lazy" decoding="async">
+    </button>
+    <figcaption>La fenêtre de bienvenue, au premier lancement.</figcaption>
+  </figure>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section class="doc" id="ia" data-title="Préparer la séance avec l’IA">
+  <div class="sec-head"><span class="n">02</span><h2>Préparer la séance avec l’IA</h2></div>
+  <p class="intro">FitPacer ne choisit pas vos exercices : c’est le rôle de votre <b>assistant IA</b> (Claude, ChatGPT…), qui connaît vos objectifs et votre historique. Il suffit de lui apprendre une fois le format FitPacer.</p>
+  <div class="row">
+    <div class="prose">
+      <h3>Donner les consignes à l’IA (une seule fois)</h3>
+      <ol class="steps">
+        <li><span>Dans FitPacer, ouvrez le menu <kbd>☰</kbd> puis <b>Consignes pour l’IA</b>.</span></li>
+        <li><span>Touchez <b>Copier</b> (ou Partager, ou Télécharger). Le texte explique à l’IA comment écrire une séance et comment lire le journal.</span></li>
+        <li><span>Collez-le dans les <b>instructions</b> de votre IA : un <b>projet Claude</b>, un <b>GPT personnalisé</b>… Ainsi, chaque nouvelle conversation le connaît déjà.</span></li>
+      </ol>
+      <div class="note warn"><span class="t">À refaire</span><p>Quand « Quoi de neuf ? » vous dit que les consignes ont changé, recopiez-les dans les instructions de votre IA.</p></div>
+      <h3>Demander une séance</h3>
+      <p>Ensuite, parlez simplement : « Prépare ma séance tapis de ce soir, 35 minutes, je suis un peu fatigué. » L’IA répond avec un bloc de texte au format FitPacer. <b>Copiez-le</b> (appui long, puis Copier) et passez à l’étape suivante.</p>
+    </div>
+    <figure class="shot">
+    <button type="button" data-cap="Menu ☰ › Consignes pour l’IA : les boutons Copier et Télécharger." aria-label="Agrandir : Menu ☰ › Consignes pour l’IA : les boutons Copier et Télécharger.">
+      <img class="d" src="/fitpacer/assets/claude-Iyu6HUdh.webp" alt="Menu ☰ › Consignes pour l’IA : les boutons Copier et Télécharger." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/claude-Bez66M3M.webp" alt="Menu ☰ › Consignes pour l’IA : les boutons Copier et Télécharger." loading="lazy" decoding="async">
+    </button>
+    <figcaption>Menu ☰ › Consignes pour l’IA : les boutons Copier et Télécharger.</figcaption>
+  </figure>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section class="doc" id="programme" data-title="Charger une séance">
+  <div class="sec-head"><span class="n">03</span><h2>Charger une séance</h2></div>
+  <p class="intro">L’écran <b>Programme</b> est le point de départ. Il présente la séance avant de la lancer : objectif, durée, ce qu’il faut préparer et le détail des exercices.</p>
+  <div class="row">
+    <div class="prose">
+      <h3>Quatre boutons en haut de l’écran</h3>
+      <div class="tbl"><table>
+        <tr><th>Bouton</th><th>Action</th></tr>
+        <tr><td><b>Coller</b></td><td>Prend la séance que vous venez de copier dans la conversation avec l’IA. Le navigateur peut demander l’autorisation de lire le presse-papiers la première fois.</td></tr>
+        <tr><td><b>Charger</b></td><td>Ouvre un fichier texte (<code>.txt</code> ou <code>.md</code>) du téléphone : téléchargement, cloud, pièce jointe d’un e-mail…</td></tr>
+        <tr><td><b>Modifier</b></td><td>Ouvre le texte de la séance pour le corriger ou l’écrire à la main.</td></tr>
+        <tr><td><b>Effacer</b></td><td>Retire la séance (après confirmation).</td></tr>
+      </table></div>
+      <p>Coller ou charger une nouvelle séance demande une confirmation avant de remplacer celle qui est affichée. La dernière séance est gardée : elle est encore là au prochain lancement.</p>
+    </div>
+    <figure class="shot">
+    <button type="button" data-cap="Sans séance : trois gros boutons pour commencer." aria-label="Agrandir : Sans séance : trois gros boutons pour commencer.">
+      <img class="d" src="/fitpacer/assets/empty-D6GchM8f.webp" alt="Sans séance : trois gros boutons pour commencer." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/empty-HpzCNJfx.webp" alt="Sans séance : trois gros boutons pour commencer." loading="lazy" decoding="async">
+    </button>
+    <figcaption>Sans séance : trois gros boutons pour commencer.</figcaption>
+  </figure>
+  </div>
+  <div class="row flip">
+    <div class="prose">
+      <h3>Lire l’écran Programme</h3>
+      <ul>
+        <li><b>Objectif</b> : la phrase de l’IA qui résume le but de la séance.</li>
+        <li><b>Programme</b> : durée totale, nombre d’exercices, temps de repos et <b>FC max</b>, la fréquence cardiaque à ne pas dépasser. Un <code>~</code> devant la durée indique une estimation : les exercices en répétitions n’ont pas de durée fixe.</li>
+        <li><b>Avant de commencer</b> : le sport à lancer sur la montre, et une liste de choses à vérifier, à cocher du doigt (clé de sécurité du tapis, bouteille d’eau…).</li>
+        <li><b>Déroulé de la séance</b> : ouvre la liste complète des exercices.</li>
+        <li><b>Démarrer la séance</b> : le gros bouton en bas.</li>
+      </ul>
+    </div>
+    <figure class="shot">
+    <button type="button" data-cap="Une séance de tapis incliné, prête à démarrer." aria-label="Agrandir : Une séance de tapis incliné, prête à démarrer.">
+      <img class="d" src="/fitpacer/assets/program-CNtOZl0m.webp" alt="Une séance de tapis incliné, prête à démarrer." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/program-s53OIo8K.webp" alt="Une séance de tapis incliné, prête à démarrer." loading="lazy" decoding="async">
+    </button>
+    <figcaption>Une séance de tapis incliné, prête à démarrer.</figcaption>
+  </figure>
+  </div>
+  <div class="row">
+    <div class="prose">
+      <h3>La ceinture cardio</h3>
+      <p>Si l’IA la recommande, un encadré demande <b>« Portez-vous la ceinture ? »</b>. Répondez <b>Oui</b> ou <b>Non</b> : la réponse figure dans le rapport, pour que l’IA sache quelle mesure de fréquence cardiaque elle lit.</p>
+      <h3>Le déroulé détaillé</h3>
+      <p>Chaque ligne affiche la durée (ou les répétitions), le nom, la vitesse, la pente et la plage de fréquence cardiaque visée. Touchez <b>‹ Retour</b> pour revenir.</p>
+    </div>
+    <div class="shots">
+      <figure class="shot">
+    <button type="button" data-cap="Ceinture cardio : « Oui, je la porte »." aria-label="Agrandir : Ceinture cardio : « Oui, je la porte ».">
+      <img class="d" src="/fitpacer/assets/home-strap-CktdeGX4.webp" alt="Ceinture cardio : « Oui, je la porte »." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/home-strap-ztvqOKqW.webp" alt="Ceinture cardio : « Oui, je la porte »." loading="lazy" decoding="async">
+    </button>
+    <figcaption>Ceinture cardio : « Oui, je la porte ».</figcaption>
+  </figure>
+      <figure class="shot">
+    <button type="button" data-cap="Le déroulé complet." aria-label="Agrandir : Le déroulé complet.">
+      <img class="d" src="/fitpacer/assets/plan-CaXnEifS.webp" alt="Le déroulé complet." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/plan-DelMuZGI.webp" alt="Le déroulé complet." loading="lazy" decoding="async">
+    </button>
+    <figcaption>Le déroulé complet.</figcaption>
+  </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section class="doc" id="format" data-title="Écrire ou corriger une séance">
+  <div class="sec-head"><span class="n">04</span><h2>Écrire ou corriger une séance</h2></div>
+  <p class="intro">Le plus souvent, l’IA écrit la séance pour vous. Mais le format est simple, et vous pouvez retoucher une séance dans l’app avec <b>Modifier</b> : changer une vitesse, retirer une série…</p>
+  <div class="row">
+    <div class="prose">
+      <h3>Une étape par ligne</h3>
+      <p>Chaque ligne suit ce modèle, avec des barres verticales <code>|</code> entre les cases :</p>
+      <pre class="code"><span class="k">Nom</span> | <span class="p">quantité</span> | info 1 | info 2 | <span class="c">note</span></pre>
+      <p>Voici une vraie séance, la même que sur les captures de ce manuel :</p>
+      <pre class="code" id="exTread"><span class="k">titre:</span> Tapis incliné
+<span class="k">type:</span> salle
+<span class="k">objectif:</span> endurance en côte, FC stable entre 120 et 135 sur les marches
+<span class="k">montre:</span> Marche sur tapis (Treadmill walking)
+<span class="k">avant:</span> clé de sécurité du tapis attachée à la ceinture
+<span class="k">avant:</span> bouteille d'eau à portée de main
+<span class="k">fc max:</span> 150
+Chauffe | <span class="p">5:00</span> | 4 → 5,5 km/h | 0 % | <span class="c">monter progressivement</span>
+<span class="p">x5 {</span>
+  Marche | <span class="p">4:00</span> | 5,5 km/h | 7 % | <span class="g">FC 120-135</span>
+  Montée | <span class="p">1:00</span> | 5,5 km/h | 9 %
+<span class="p">}</span>
+Retour au calme | <span class="p">5:00</span> | 5,5 → 3 km/h par 1 en 3:00 | 0 %</pre>
+      <div class="copyrow"><button class="copy" type="button" data-copy="exTread">Copier l’exemple</button></div>
+    </div>
+    <figure class="shot">
+    <button type="button" data-cap="Modifier : l’app vérifie la séance pendant que vous écrivez." aria-label="Agrandir : Modifier : l’app vérifie la séance pendant que vous écrivez.">
+      <img class="d" src="/fitpacer/assets/editor-BjU04Kty.webp" alt="Modifier : l’app vérifie la séance pendant que vous écrivez." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/editor-DkwTqnco.webp" alt="Modifier : l’app vérifie la séance pendant que vous écrivez." loading="lazy" decoding="async">
+    </button>
+    <figcaption>Modifier : l’app vérifie la séance pendant que vous écrivez.</figcaption>
+  </figure>
+  </div>
+
+  <h3>Ce que l’on peut écrire</h3>
+  <div class="tbl"><table>
+    <tr><th>Élément</th><th>Comment l’écrire</th><th>Ce que fait l’app</th></tr>
+    <tr><td>Étape chronométrée</td><td><code>4:00</code>, <code>45s</code> ou <code>5</code> (minutes)</td><td>Compte à rebours ; l’étape suivante démarre seule.</td></tr>
+    <tr><td>Répétitions</td><td><code>x10</code>, <code>x8 par côté</code>, <code>max</code></td><td>Affiche le nombre et attend que vous touchiez <b>Fait ✓</b>.</td></tr>
+    <tr><td>Infos</td><td><code>5,5 km/h</code>, <code>7 %</code>, <code>6 kg</code>, <code>niv 8</code>, <code>120 W</code></td><td>Affichées en gros (vitesse, pente, charge…).</td></tr>
+    <tr><td>Progression</td><td><code>4 → 5,5 km/h</code> ; options <code>par 1</code>, <code>en 2:00</code></td><td>Change la valeur par paliers, avec bip et annonce vocale à chaque palier.</td></tr>
+    <tr><td>Repos</td><td><code>Repos | 1:30</code></td><td>Chrono de repos ; l’exercice suivant est annoncé.</td></tr>
+    <tr><td>Bloc répété</td><td><code>x3 {</code> … <code>}</code></td><td>Répète les étapes du bloc ; affiche le tour (1/3, 2/3…).</td></tr>
+    <tr><td>Exercice composé</td><td><code>Échauffement {</code> … <code>}</code> ou <code>Échauffement x3 {</code></td><td>Guide chaque sous-exercice avec un bandeau ; compte pour un seul exercice dans le rapport. Pas de repos à l’intérieur.</td></tr>
+    <tr><td>Plage de FC</td><td><code>FC 120-145</code> dans une case après la quantité</td><td>Affiche la plage et dit si vous êtes dedans ; rappel vocal si vous en sortez plus de 15 s.</td></tr>
+    <tr><td>FC max</td><td><code>fc max: 150</code> en tête</td><td>Au-dessus : bandeau rouge, bips et voix. Ne se change pas dans l’app.</td></tr>
+    <tr><td>En-tête</td><td><code>titre:</code> <code>type: salle</code>/<code>maison</code> <code>objectif:</code> <code>montre:</code> <code>avant:</code> <code>ceinture: recommandée</code></td><td>Remplit l’écran Programme et la liste « Avant de commencer ».</td></tr>
+    <tr><td>Commentaire</td><td><code># …</code></td><td>Ignoré par l’app.</td></tr>
+  </table></div>
+
+  <div class="row">
+    <div class="prose">
+      <h3>Progression guidée, un exemple</h3>
+      <p><code>3 → 5 km/h par 1 en 2:00</code> donne 3 km/h au départ, 4 km/h à 1:00, puis 5 km/h dès 2:00, gardé jusqu’à la fin de l’étape. Pendant l’étape, l’app affiche la valeur actuelle et le prochain palier.</p>
+      <h3>En cas d’erreur</h3>
+      <p>Si une ligne n’est pas comprise, un encadré rouge l’indique avec son numéro et un exemple correct. Touchez <b>Corriger</b> pour ouvrir le texte. Tant qu’il reste une erreur, les lignes concernées ne sont pas prises en compte.</p>
+    </div>
+    <figure class="shot">
+    <button type="button" data-cap="Une plage de FC mal écrite, ligne 11 : l’app propose de corriger." aria-label="Agrandir : Une plage de FC mal écrite, ligne 11 : l’app propose de corriger.">
+      <img class="d" src="/fitpacer/assets/error-CrwAz3yt.webp" alt="Une plage de FC mal écrite, ligne 11 : l’app propose de corriger." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/error-c8MYA6-b.webp" alt="Une plage de FC mal écrite, ligne 11 : l’app propose de corriger." loading="lazy" decoding="async">
+    </button>
+    <figcaption>Une plage de FC mal écrite, ligne 11 : l’app propose de corriger.</figcaption>
+  </figure>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section class="doc" id="montre" data-title="Connecter la montre">
+  <div class="sec-head"><span class="n">05</span><h2>Connecter la montre</h2></div>
+  <p class="intro">L’app affiche en direct la <b>fréquence cardiaque</b> envoyée par votre montre (ou une ceinture cardio) en Bluetooth. C’est facultatif : sans montre, la séance se déroule normalement.</p>
+  <div class="row">
+    <div class="prose">
+      <h3>Avant la séance</h3>
+      <ol class="steps">
+        <li><span>Sur la montre, activez le <b>partage de la fréquence cardiaque</b> (diffusion FC). Sur Suunto, l’option est dans les réglages de connectivité ou pendant l’exercice.</span></li>
+        <li><span>Sur le téléphone, activez le <b>Bluetooth et la localisation</b> : Android exige la localisation pour trouver les appareils Bluetooth.</span></li>
+        <li><span>Dans FitPacer, touchez <b>Connecter la montre</b> et choisissez-la dans la liste.</span></li>
+        <li><span>Le bouton devient vert avec le nom de la montre, et la FC s’affiche en haut à gauche.</span></li>
+      </ol>
+      <p>Si vous touchez <b>Démarrer la séance</b> sans montre connectée, l’app propose de la connecter ou de démarrer sans.</p>
+      <div class="note warn"><span class="t">Navigateurs</span><p>Chrome sur Android : oui. Brave : activez <code>brave://flags</code> › « Web Bluetooth API », puis relancez. iPhone/iPad, Firefox, Samsung Internet : non.</p></div>
+    </div>
+    <div class="shots">
+      <figure class="shot">
+    <button type="button" data-cap="Montre connectée : la FC s’affiche en haut." aria-label="Agrandir : Montre connectée : la FC s’affiche en haut.">
+      <img class="d" src="/fitpacer/assets/connected-DSm3-h07.webp" alt="Montre connectée : la FC s’affiche en haut." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/connected-JPLCConP.webp" alt="Montre connectée : la FC s’affiche en haut." loading="lazy" decoding="async">
+    </button>
+    <figcaption>Montre connectée : la FC s’affiche en haut.</figcaption>
+  </figure>
+      <figure class="shot">
+    <button type="button" data-cap="Au démarrage, si la montre n’est pas connectée." aria-label="Agrandir : Au démarrage, si la montre n’est pas connectée.">
+      <img class="d" src="/fitpacer/assets/watchask-8zalV-_6.webp" alt="Au démarrage, si la montre n’est pas connectée." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/watchask-B_Z_XqQo.webp" alt="Au démarrage, si la montre n’est pas connectée." loading="lazy" decoding="async">
+    </button>
+    <figcaption>Au démarrage, si la montre n’est pas connectée.</figcaption>
+  </figure>
+    </div>
+  </div>
+  <div class="prose">
+    <h3>Si ça ne marche pas</h3>
+    <ul>
+      <li><b>La montre n’apparaît pas</b> : touchez de nouveau « Connecter la montre ». La recherche liste alors tous les appareils Bluetooth.</li>
+      <li><b>Montre déjà utilisée</b> : si la FC est envoyée à un autre appareil (tapis, autre téléphone), déconnectez-le.</li>
+      <li><b>Bluetooth bloqué</b> : icône à gauche de l’adresse › Autorisations › autorisez le Bluetooth (ou « Appareils à proximité »).</li>
+      <li><b>Coupure pendant la séance</b> : gardez l’app à l’écran. Elle se reconnecte seule ; le bouton passe à l’orange (« Reconnexion… ») en attendant.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section class="doc" id="seance" data-title="Pendant la séance">
+  <div class="sec-head"><span class="n">06</span><h2>Pendant la séance</h2></div>
+  <p class="intro">L’écran de séance se lit <b>de loin</b>, sur le tapis ou depuis le sol. Il reste allumé tout le long. Vous n’avez rien à toucher pour les étapes chronométrées : l’app passe seule à la suivante, avec des bips et une annonce vocale.</p>
+
+  <div class="anno">
+    <div class="frame">
+      <figure class="shot">
+    <button type="button" data-cap="L’écran de séance, repères numérotés." aria-label="Agrandir : L’écran de séance, repères numérotés.">
+      <img class="d" src="/fitpacer/assets/run-zone-DFnd1W_g.webp" alt="L’écran de séance, repères numérotés." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/run-zone-BqBi9DQI.webp" alt="L’écran de séance, repères numérotés." loading="lazy" decoding="async">
+    </button>
+  </figure>
+      <span class="pin" style="left:34%;top:7.5%">1</span>
+      <span class="pin" style="left:40%;top:3%">2</span>
+      <span class="pin" style="left:94%;top:10.6%">3</span>
+      <span class="pin" style="left:53%;top:2.7%">4</span>
+      <span class="pin" style="left:38%;top:17.5%">5</span>
+      <span class="pin" style="left:68%;top:25%">6</span>
+      <span class="pin" style="left:50%;top:31.5%">7</span>
+      <span class="pin" style="left:72%;top:45%">8</span>
+      <span class="pin" style="left:42%;top:55.2%">9</span>
+      <span class="pin" style="left:50%;top:63%">10</span>
+      <span class="pin" style="left:50%;top:70%">11</span>
+      <span class="pin" style="left:50%;top:90%">12</span>
+    </div>
+    <ol class="legend">
+      <li><span>1</span><p><b>Fréquence cardiaque</b> de la montre. La couleur change selon la plage visée : vert dedans, orange au-dessus, rouge au-delà de la FC max.</p></li>
+      <li><span>2</span><p><b>Voix</b> : coupe ou remet les annonces vocales. Les bips restent.</p></li>
+      <li><span>3</span><p><b>Montre</b> : son nom quand elle est connectée.</p></li>
+      <li><span>4</span><p><b>Terminer</b> : arrête la séance avant la fin, après confirmation.</p></li>
+      <li><span>5</span><p><b>Exercice en cours</b> et numéro du tour (1/5).</p></li>
+      <li><span>6</span><p><b>Réglages à appliquer</b> : vitesse, pente, charge… À recopier sur le tapis ou la machine.</p></li>
+      <li><span>7</span><p><b>Plage FC</b> de l’étape. Le curseur blanc montre votre FC, le trait rouge la FC max.</p></li>
+      <li><span>8</span><p><b>Chrono</b> : temps restant de l’étape.</p></li>
+      <li><span>9</span><p><b>Ensuite</b> : l’étape suivante et sa durée.</p></li>
+      <li><span>10</span><p><b>Avancement</b> : une case par étape, l’orange est l’étape en cours. Dessous : temps écoulé, pourcentage, temps restant.</p></li>
+      <li><span>11</span><p><b>Courbe de FC</b> depuis le début. Le pointillé orange est la FC max.</p></li>
+      <li><span>12</span><p><b>Préc.</b> / <b>Pause</b> / <b>Suiv.</b>, toujours en bas de l’écran.</p></li>
+    </ol>
+  </div>
+
+  <div class="row">
+    <div class="prose">
+      <h3>Progression : les paliers</h3>
+      <p>Pendant une étape comme « Chauffe 4 → 5,5 km/h », la valeur actuelle est affichée en orange, et la ligne dessous annonce le prochain palier (« → 5,5 km/h · palier dans 0:03 »). À chaque palier : double bip, vibration et annonce vocale « Passez à 5,5 kilomètres heure ».</p>
+      <h3>Les bips</h3>
+      <ul>
+        <li><b>5 bips courts</b> (avec une petite vibration) : les 5 dernières secondes d’une étape, et aussi avant un palier de progression quand les paliers durent au moins 15 secondes. Le chrono passe à l’orange 10 secondes avant la fin.</li>
+        <li><b>Bip long + vibration</b> : nouvelle étape, l’écran clignote.</li>
+        <li><b>Double bip</b> : nouveau palier de progression.</li>
+        <li><b>Bip grave</b> : FC au-dessus de la FC max.</li>
+        <li><b>Bip court + voix</b> : vous sortez de la plage de FC de l’étape depuis plus de 15 secondes.</li>
+      </ul>
+    </div>
+    <figure class="shot">
+    <button type="button" data-cap="Chauffe : 4 km/h maintenant, 5,5 km/h dans 3 secondes." aria-label="Agrandir : Chauffe : 4 km/h maintenant, 5,5 km/h dans 3 secondes.">
+      <img class="d" src="/fitpacer/assets/run-ramp-B-RlQE1h.webp" alt="Chauffe : 4 km/h maintenant, 5,5 km/h dans 3 secondes." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/run-ramp-DPjKTY4_.webp" alt="Chauffe : 4 km/h maintenant, 5,5 km/h dans 3 secondes." loading="lazy" decoding="async">
+    </button>
+    <figcaption>Chauffe : 4 km/h maintenant, 5,5 km/h dans 3 secondes.</figcaption>
+  </figure>
+  </div>
+
+  <div class="row flip">
+    <div class="prose">
+      <h3>La plage de fréquence cardiaque</h3>
+      <p>Quand l’étape a une plage (par exemple 120 – 135), l’app indique en permanence <b>« Dans la plage ✓ »</b>, <b>« Au-dessus : ralentissez »</b> ou <b>« En dessous : accélérez »</b>. Si vous restez dehors plus de 15 secondes, une voix vous le rappelle.</p>
+      <h3>FC max dépassée</h3>
+      <p>Au-delà de la FC max de la séance, un <b>bandeau rouge</b> apparaît en haut, avec bip grave, vibration et message vocal : « ralentissez, récupérez ». C’est un garde-fou : ralentissez jusqu’à ce qu’il disparaisse.</p>
+    </div>
+    <div class="shots">
+      <figure class="shot">
+    <button type="button" data-cap="Au-dessus de la plage." aria-label="Agrandir : Au-dessus de la plage.">
+      <img class="d" src="/fitpacer/assets/run-zone-high-BN5UqZ4A.webp" alt="Au-dessus de la plage." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/run-zone-high-BqANyEG5.webp" alt="Au-dessus de la plage." loading="lazy" decoding="async">
+    </button>
+    <figcaption>Au-dessus de la plage.</figcaption>
+  </figure>
+      <figure class="shot">
+    <button type="button" data-cap="FC max dépassée : bandeau rouge." aria-label="Agrandir : FC max dépassée : bandeau rouge.">
+      <img class="d" src="/fitpacer/assets/run-danger-Brioprnh.webp" alt="FC max dépassée : bandeau rouge." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/run-danger-BIEK9K1J.webp" alt="FC max dépassée : bandeau rouge." loading="lazy" decoding="async">
+    </button>
+    <figcaption>FC max dépassée : bandeau rouge.</figcaption>
+  </figure>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="prose">
+      <h3>Exercices en répétitions</h3>
+      <p>Pour « Pompes x10 », l’app affiche le nombre en très gros et attend : touchez <b>Fait ✓</b> quand c’est terminé. Le temps passé est noté (« En cours depuis 0:03 »).</p>
+      <h3>Repos</h3>
+      <p>Le chrono de repos tourne, et l’exercice suivant est annoncé à voix haute avant la fin, pour vous préparer.</p>
+    </div>
+    <div class="shots">
+      <figure class="shot">
+    <button type="button" data-cap="Pompes : 10 répétitions, puis « Fait ✓ »." aria-label="Agrandir : Pompes : 10 répétitions, puis « Fait ✓ ».">
+      <img class="d" src="/fitpacer/assets/home-reps-9g5JEAOn.webp" alt="Pompes : 10 répétitions, puis « Fait ✓ »." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/home-reps-BrHSe3Of.webp" alt="Pompes : 10 répétitions, puis « Fait ✓ »." loading="lazy" decoding="async">
+    </button>
+    <figcaption>Pompes : 10 répétitions, puis « Fait ✓ ».</figcaption>
+  </figure>
+      <figure class="shot">
+    <button type="button" data-cap="Repos, avec l’exercice suivant." aria-label="Agrandir : Repos, avec l’exercice suivant.">
+      <img class="d" src="/fitpacer/assets/home-rest-DOxHTWxE.webp" alt="Repos, avec l’exercice suivant." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/home-rest-BCft8EmM.webp" alt="Repos, avec l’exercice suivant." loading="lazy" decoding="async">
+    </button>
+    <figcaption>Repos, avec l’exercice suivant.</figcaption>
+  </figure>
+    </div>
+  </div>
+
+  <div class="row flip">
+    <div class="prose">
+      <h3>Exercices composés</h3>
+      <p>Un exercice comme <b>Échauffement</b> peut regrouper plusieurs petits exercices. Un bandeau orange en haut rappelle le groupe, l’avancement (1/4) et le temps restant du groupe ; chaque sous-exercice a son propre chrono.</p>
+    </div>
+    <figure class="shot">
+    <button type="button" data-cap="Échauffement : 1er sous-exercice sur 4." aria-label="Agrandir : Échauffement : 1er sous-exercice sur 4.">
+      <img class="d" src="/fitpacer/assets/home-composite-CgjLLcSS.webp" alt="Échauffement : 1er sous-exercice sur 4." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/home-composite-BEDSwq7E.webp" alt="Échauffement : 1er sous-exercice sur 4." loading="lazy" decoding="async">
+    </button>
+    <figcaption>Échauffement : 1er sous-exercice sur 4.</figcaption>
+  </figure>
+  </div>
+
+  <div class="row">
+    <div class="prose">
+      <h3>Pause, Préc. et Suiv.</h3>
+      <ul>
+        <li><b>Pause</b> fige le chrono et affiche depuis combien de temps vous êtes arrêté. <b>Reprendre</b> relance là où vous en étiez. Les pauses de 10 s ou plus sont notées dans le rapport, avec la FC au début et à la fin : l’IA y voit votre récupération.</li>
+        <li><b>Suiv. ▶</b> passe à l’étape suivante. Si l’étape n’est pas finie, elle est notée <b>écourtée</b> (ou <b>sautée</b> si vous ne l’avez pas commencée).</li>
+        <li><b>◀ Préc.</b> revient à l’étape précédente (grisé sur la première).</li>
+      </ul>
+      <h3>Terminer avant la fin</h3>
+      <p><b>■ Terminer</b>, en haut, demande confirmation puis ouvre le bilan. Le rapport indique « arrêtée avant la fin » et liste les étapes non faites.</p>
+      <div class="note tip"><span class="t">Écran</span><p>Gardez l’app au premier plan : l’écran reste allumé, et le chrono reste juste même si le téléphone se met brièvement en veille.</p></div>
+    </div>
+    <div class="shots">
+      <figure class="shot">
+    <button type="button" data-cap="En pause depuis 0:42." aria-label="Agrandir : En pause depuis 0:42.">
+      <img class="d" src="/fitpacer/assets/run-pause-BpKtMvuU.webp" alt="En pause depuis 0:42." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/run-pause-C63sP9Yt.webp" alt="En pause depuis 0:42." loading="lazy" decoding="async">
+    </button>
+    <figcaption>En pause depuis 0:42.</figcaption>
+  </figure>
+      <figure class="shot">
+    <button type="button" data-cap="Terminer : une confirmation est demandée." aria-label="Agrandir : Terminer : une confirmation est demandée.">
+      <img class="d" src="/fitpacer/assets/stop-confirm-sjuRFtpE.webp" alt="Terminer : une confirmation est demandée." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/stop-confirm-DlZacMd9.webp" alt="Terminer : une confirmation est demandée." loading="lazy" decoding="async">
+    </button>
+    <figcaption>Terminer : une confirmation est demandée.</figcaption>
+  </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section class="doc" id="bilan" data-title="Le bilan et le rapport">
+  <div class="sec-head"><span class="n">07</span><h2>Le bilan et le rapport</h2></div>
+  <p class="intro">À la fin, une voix dit « Séance terminée. Bravo ! » et l’écran <b>Séance terminée</b> s’ouvre. Complétez-le en 20 secondes, puis envoyez le <b>rapport</b> à l’IA.</p>
+  <div class="row">
+    <div class="prose">
+      <h3>Ce que montre le bilan</h3>
+      <ul>
+        <li><b>Durée</b> d’effort réel (sans vos pauses), <b>FC min, moyenne et max</b>.</li>
+        <li>La <b>courbe de FC</b> de toute la séance, avec la limite (FC max).</li>
+        <li>Un <b>tableau par exercice</b> : FC moyenne et max de chacun.</li>
+      </ul>
+      <h3>À remplir</h3>
+      <ul>
+        <li><b>Ressenti de l’effort</b> : de 1 (très facile) à 10 (maximal).</li>
+        <li><b>Commentaire</b> libre : « 8 pompes seulement à la 3e série, salle chaude… »</li>
+        <li><b>Poids</b> et <b>tour de taille</b>, si vous voulez les suivre (facultatifs).</li>
+      </ul>
+    </div>
+    <figure class="shot tall">
+    <button type="button" data-cap="Le bilan complet (capture de toute la page)." aria-label="Agrandir : Le bilan complet (capture de toute la page).">
+      <img class="d" src="/fitpacer/assets/done-full-5Hkl7ZcC.webp" alt="Le bilan complet (capture de toute la page)." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/done-full-B_lZNlPg.webp" alt="Le bilan complet (capture de toute la page)." loading="lazy" decoding="async">
+    </button>
+    <figcaption>Le bilan complet (capture de toute la page).</figcaption>
+  </figure>
+  </div>
+  <div class="row flip">
+    <div class="prose">
+      <h3>Envoyer le rapport à l’IA</h3>
+      <p>L’encadré <b>Rapport pour l’IA</b> prépare un fichier (par exemple <code>fitpacer-2026-11-04-1830-tapis-incline.md</code>) avec la ligne de journal, le détail des étapes et la FC.</p>
+      <ul>
+        <li><b>Partager</b> : l’envoie directement dans l’app de l’IA (Claude, ChatGPT…). C’est le plus simple.</li>
+        <li><b>Télécharger</b> : l’enregistre sur le téléphone, pour le joindre ensuite.</li>
+        <li><b>Visualiser</b> : l’affiche en lecture seule, pour vérifier.</li>
+      </ul>
+      <p>Envoyez aussi, si possible, le fichier <code>.fit</code> exporté par la montre.</p>
+      <div class="note warn"><span class="t">Important</span><p>Le rapport n’est pas gardé. Envoyez-le <b>avant</b> de toucher « Revenir au programme » ou de fermer l’app.</p></div>
+      <p class="note tip" style="display:grid"><span class="t">Sur les captures</span><span>Le bouton Partager n’apparaît que sur un téléphone qui sait partager des fichiers ; ces captures ont été faites sans.</span></p>
+    </div>
+    <figure class="shot">
+    <button type="button" data-cap="Visualiser : le rapport complet." aria-label="Agrandir : Visualiser : le rapport complet.">
+      <img class="d" src="/fitpacer/assets/report-p8pTCImE.webp" alt="Visualiser : le rapport complet." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/report-qsvuG4is.webp" alt="Visualiser : le rapport complet." loading="lazy" decoding="async">
+    </button>
+    <figcaption>Visualiser : le rapport complet.</figcaption>
+  </figure>
+  </div>
+
+  <h3>La ligne de journal</h3>
+  <p class="prose" style="margin-bottom:12px">C’est la première partie du rapport. Votre IA la range dans votre journal d’entraînement. Elle compte 9 colonnes séparées par <code>|</code> :</p>
+  <p class="jline">04/11/2026 <i>|</i> salle <i>|</i> 35 min <i>|</i> Tapis incliné : Chauffe 5 min (4 → 5,5 km/h, 0 %) ; Marche 5x4 min (5,5 km/h, 7 %) ; Montée 5x1 min (5,5 km/h, 9 %) ; Retour au calme 5 min (…) ; pause ajoutée par l’utilisateur : Marche (tour 1) 42 s <i>|</i> 97/128/157 <i>|</i> ressenti 7/10 <i>|</i> 82,4 kg <i>|</i> – <i>|</i> salle chaude, bonne forme ; …</p>
+  <div class="tbl" style="margin-top:14px"><table>
+    <tr><th>#</th><th>Colonne</th><th>Contenu</th></tr>
+    <tr><td class="n">1</td><td>Date</td><td>jj/mm/aaaa</td></tr>
+    <tr><td class="n">2</td><td>Type</td><td>salle ou maison</td></tr>
+    <tr><td class="n">3</td><td>Durée</td><td>temps d’effort réel, sans les pauses ajoutées</td></tr>
+    <tr><td class="n">4</td><td>Contenu</td><td>titre et étapes réalisées, puis les écarts : sauté, écourté, non fait, pauses</td></tr>
+    <tr><td class="n">5</td><td>FC</td><td>min/moy/max en bpm, ou « FC non reçue »</td></tr>
+    <tr><td class="n">6</td><td>Ressenti</td><td>x/10</td></tr>
+    <tr><td class="n">7</td><td>Poids</td><td>« 82,4 kg » ou « – »</td></tr>
+    <tr><td class="n">8</td><td>Tour de taille</td><td>« 94 cm » ou « – »</td></tr>
+    <tr><td class="n">9</td><td>Remarque</td><td>votre commentaire, puis les analyses de l’app : ceinture, dérive et récupération de FC, temps passé dans la plage</td></tr>
+  </table></div>
+</section>
+
+<!-- ============================================================ -->
+<section class="doc" id="menu" data-title="Menu et réglages">
+  <div class="sec-head"><span class="n">08</span><h2>Menu et réglages</h2></div>
+  <p class="intro">Le bouton <kbd>☰</kbd>, en haut à droite, ouvre le menu.</p>
+  <div class="row">
+    <div class="prose">
+      <div class="tbl"><table>
+        <tr><th>Entrée</th><th>Ce qu’elle fait</th></tr>
+        <tr><td><b>Aide</b></td><td>Ce manuel. Touchez <b>‹ Retour</b> pour revenir là où vous étiez, même en pleine séance.</td></tr>
+        <tr><td><b>Consignes pour l’IA</b></td><td>Le texte à donner à votre IA (voir <a href="#ia">section 02</a>).</td></tr>
+        <tr><td><b>Thème</b></td><td><b>Sombre</b> (par défaut) ou <b>Clair</b>. Le thème clair se lit mieux en plein soleil.</td></tr>
+        <tr><td><b>Quoi de neuf ?</b></td><td>Les nouveautés des dernières versions.</td></tr>
+        <tr><td><b>À propos</b></td><td>Auteur, version de l’app et version du format de séance.</td></tr>
+      </table></div>
+      <p>Le bouton <b>🔊</b>, à côté de la FC, coupe ou remet les annonces vocales. Ce choix est gardé d’une séance à l’autre.</p>
+    </div>
+    <div class="shots">
+      <figure class="shot">
+    <button type="button" data-cap="Le menu ☰." aria-label="Agrandir : Le menu ☰.">
+      <img class="d" src="/fitpacer/assets/menu-B36N8eyr.webp" alt="Le menu ☰." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/menu-C0tuT2eh.webp" alt="Le menu ☰." loading="lazy" decoding="async">
+    </button>
+    <figcaption>Le menu ☰.</figcaption>
+  </figure>
+      <figure class="shot">
+    <button type="button" data-cap="Thème : Sombre ou Clair." aria-label="Agrandir : Thème : Sombre ou Clair.">
+      <img class="d" src="/fitpacer/assets/theme-BsX6U55v.webp" alt="Thème : Sombre ou Clair." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/theme-BN9vDUu1.webp" alt="Thème : Sombre ou Clair." loading="lazy" decoding="async">
+    </button>
+    <figcaption>Thème : Sombre ou Clair.</figcaption>
+  </figure>
+    </div>
+  </div>
+  <div class="gallery">
+    <figure class="shot">
+    <button type="button" data-cap="Aide : ce manuel, dans l’app." aria-label="Agrandir : Aide : ce manuel, dans l’app.">
+      <img class="d" src="/fitpacer/assets/manual-B3dLJPEU.webp" alt="Aide : ce manuel, dans l’app." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/manual-1jr11uby.webp" alt="Aide : ce manuel, dans l’app." loading="lazy" decoding="async">
+    </button>
+    <figcaption>Aide : ce manuel, dans l’app.</figcaption>
+  </figure>
+    <figure class="shot">
+    <button type="button" data-cap="Quoi de neuf ?" aria-label="Agrandir : Quoi de neuf ?">
+      <img class="d" src="/fitpacer/assets/whatsnew-FOibDzxX.webp" alt="Quoi de neuf ?" loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/whatsnew-BPE4Lj_B.webp" alt="Quoi de neuf ?" loading="lazy" decoding="async">
+    </button>
+    <figcaption>Quoi de neuf ?</figcaption>
+  </figure>
+    <figure class="shot">
+    <button type="button" data-cap="À propos." aria-label="Agrandir : À propos.">
+      <img class="d" src="/fitpacer/assets/about-BKKRyEl4.webp" alt="À propos." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/about-_KVxKi9p.webp" alt="À propos." loading="lazy" decoding="async">
+    </button>
+    <figcaption>À propos.</figcaption>
+  </figure>
+    <figure class="shot">
+    <button type="button" data-cap="Une séance maison, avec ceinture recommandée." aria-label="Agrandir : Une séance maison, avec ceinture recommandée.">
+      <img class="d" src="/fitpacer/assets/home-program-BEdroQ2q.webp" alt="Une séance maison, avec ceinture recommandée." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/assets/home-program-CtcEOdSV.webp" alt="Une séance maison, avec ceinture recommandée." loading="lazy" decoding="async">
+    </button>
+    <figcaption>Une séance maison, avec ceinture recommandée.</figcaption>
+  </figure>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section class="doc" id="vie-privee" data-title="Vie privée">
+  <div class="sec-head"><span class="n">09</span><h2>Vie privée</h2></div>
+  <div class="prose">
+    <p class="intro" style="margin:0">Aucun compte, aucun serveur : <b>rien n’est envoyé sur Internet</b> et aucune séance n’est conservée. Le rapport n’existe que le temps de le partager ou de le télécharger.</p>
+    <p>Seuls quelques réglages restent sur votre téléphone, pour votre confort :</p>
+    <ul>
+      <li>la dernière séance collée ;</li>
+      <li>le choix des annonces vocales ;</li>
+      <li>le thème (sombre ou clair) ;</li>
+      <li>ce qui a déjà été montré : fenêtre de bienvenue, dernière version vue pour « Quoi de neuf ? ».</li>
+    </ul>
+    <p>Les données de la montre ne servent qu’à l’affichage et au rapport de la séance en cours.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section class="doc" id="faq" data-title="Questions fréquentes">
+  <div class="sec-head"><span class="n">10</span><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Je n’entends pas la voix.</summary><div class="a"><p>Vérifiez que le bouton 🔊 est actif et que le volume « multimédia » du téléphone est monté. La voix utilise la synthèse vocale du téléphone : sur Android, réglez-la dans Paramètres › Accessibilité › Synthèse vocale.</p></div></details>
+    <details><summary>Pas de bip au démarrage.</summary><div class="a"><p>Les sons s’activent quand vous touchez « Démarrer la séance ». Si le téléphone est en mode silencieux, les vibrations restent.</p></div></details>
+    <details><summary>L’écran s’est éteint pendant la séance.</summary><div class="a"><p>L’app garde l’écran allumé tant qu’elle est au premier plan. Si vous changez d’app, elle reprend ce réglage à votre retour, et le chrono reste juste.</p></div></details>
+    <details><summary>La FC affiche « -- ».</summary><div class="a"><p>La montre n’envoie plus de mesure depuis quelques secondes. Vérifiez que le partage de FC est toujours actif sur la montre. Voir <a href="#montre">Connecter la montre</a>.</p></div></details>
+    <details><summary>« Coller » ne fait rien.</summary><div class="a"><p>Autorisez l’accès au presse-papiers si le navigateur le demande. Sinon, touchez <b>Modifier</b>, faites un appui long dans la zone de texte, puis <b>Coller</b>, et validez.</p></div></details>
+    <details><summary>Je me suis trompé d’étape.</summary><div class="a"><p>Utilisez <b>◀ Préc.</b> pour revenir. L’étape est reprise depuis le début.</p></div></details>
+    <details><summary>Puis-je modifier la FC max dans l’app ?</summary><div class="a"><p>Non. Elle est fixée par la séance (<code>fc max:</code>), donc par votre IA. Demandez-lui de l’ajuster, ou modifiez la ligne avec <b>Modifier</b>.</p></div></details>
+    <details><summary>Où retrouver mes anciennes séances ?</summary><div class="a"><p>Dans votre conversation avec l’IA : c’est elle qui tient le journal. FitPacer ne garde aucun historique.</p></div></details>
+    <details><summary>Ça marche sans Internet ?</summary><div class="a"><p>Oui, une fois l’app installée et ouverte au moins une fois avec une connexion.</p></div></details>
+  </div>
+</section>
+
+<footer>Manuel FitPacer · version de l’app <span class="appVer"></span> · captures faites sur un téléphone Android simulé, avec une montre simulée pour la fréquence cardiaque. Les captures suivent le thème de cette page (sombre ou clair).</footer>
+</main>
+</div>
+
+<dialog class="lb" id="lb" aria-label="Capture agrandie">
+  <div class="in">
+    <img id="lbImg" alt="">
+    <div class="bar"><button type="button" id="lbPrev" aria-label="Capture précédente">‹</button><p id="lbCap"></p><button type="button" id="lbNext" aria-label="Capture suivante">›</button><button type="button" id="lbClose">Fermer</button></div>
+  </div>
+</dialog>
+</body>
+</html>

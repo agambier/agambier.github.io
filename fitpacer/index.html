@@ -9,8 +9,10 @@
 <link rel="apple-touch-icon" href="/fitpacer/apple-touch-icon.png">
 <title>FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/assets/index-D7ezvti-.js"></script>
-  <link rel="stylesheet" crossorigin href="/fitpacer/assets/index-DeFeXjRg.css">
+  <script type="module" crossorigin src="/fitpacer/assets/main-BurQxB5i.js"></script>
+  <link rel="modulepreload" crossorigin href="/fitpacer/assets/version-B_ADmt2C.js">
+  <link rel="stylesheet" crossorigin href="/fitpacer/assets/version-CEnomOl5.css">
+  <link rel="stylesheet" crossorigin href="/fitpacer/assets/main-C5g5StWo.css">
 <link rel="manifest" href="/fitpacer/manifest.webmanifest"></head>
 <body>
 <header class="top">
@@ -23,7 +25,7 @@
  <button class="stop" id="stopBtn" type="button" aria-label="Terminer la séance" title="Terminer la séance">■ Terminer</button>
   <button class="menuBtn" id="menuBtn" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="menu" aria-label="Menu">☰</button>
   <nav class="menu" id="menu" role="menu" hidden>
-    <button type="button" role="menuitem" data-open="helpDialog">Aide</button>
+    <button type="button" role="menuitem" id="helpBtn">Aide</button>
     <button type="button" role="menuitem" data-open="claudeDialog">Consignes pour l’IA</button>
     <button type="button" role="menuitem" class="subToggle" id="themeBtn" aria-haspopup="menu" aria-expanded="false" aria-controls="themeMenu">Thème</button>
     <div class="submenu" id="themeMenu" role="menu" aria-label="Thème" hidden>
@@ -201,42 +203,10 @@
     <button type="button" class="save" id="editSave">Valider</button>
   </div>
 </dialog>
-<dialog class="dialog info" id="helpDialog" aria-labelledby="helpT">
-  <h2 id="helpT">Aide</h2>
-  <details open>
-    <summary>Format de séance</summary>
-    <p>En haut de l’écran : <b>Coller</b> (séance copiée dans la conversation avec l’IA), <b>Charger</b> (fichier texte .txt ou .md du téléphone : téléchargement, cloud, pièce jointe d’un e-mail…), <b>Modifier</b> (ouvre le texte de la séance pour le corriger ou l’écrire à la main) et <b>Effacer</b>.</p>
-    <p>Une étape par ligne : <code>Nom | quantité | info 1 | info 2 | note</code></p>
-    <ul>
-      <li><b>Chronométrée</b> : <code>4:00</code>, <code>45s</code> ou <code>5</code> (minutes). L’étape suivante démarre seule.</li>
-      <li><b>Répétitions</b> : <code>x10</code>, <code>x8 par côté</code> ou <code>max</code>. L’étape attend « Fait ✓ ».</li>
-      <li><b>Infos</b> : <code>5,5 km/h</code>, <code>7 %</code>, <code>6 kg</code>, <code>niv 8</code>, <code>120 W</code>…</li>
-      <li><b>Progression guidée</b> : <code>4 → 5,5 km/h</code>, annoncée palier par palier. En option : <code>par 1</code> pour l’écart entre deux paliers (<code>3 → 5 km/h par 1</code>), <code>en 2:00</code> pour atteindre la vitesse d’arrivée au bout de 2 min puis la garder (<code>3 → 5 km/h par 1 en 2:00</code> : 4 km/h à 1:00, 5 km/h dès 2:00).</li>
-      <li><b>Repos</b> : <code>Repos | 1:30</code>, l’exercice suivant est annoncé.</li>
-      <li><b>Bloc répété</b> : <code>x3 {</code> (ou <code>3x {</code>) … <code>}</code></li>
-      <li><b>Exercice composé</b> : <code>Échauffement {</code> (un tour) ou <code>Échauffement x3 {</code> (3 tours), les sous-exercices, puis <code>}</code>. Sa durée est calculée. L’app vous guide sous-exercice par sous-exercice, et le rapport le compte comme un seul exercice (« Échauffement 6 min (3 tours) »). Pas de repos à l’intérieur.</li>
-      <li><b>Plage de FC d’une étape</b> : <code>FC 120-145</code> dans n’importe quelle case après la quantité (<code>Marche rapide | 10:00 | 6 km/h | 3 % | FC 120-145</code>). L’app affiche la plage, indique si vous êtes dedans et vous le rappelle à voix haute si vous en sortez plus de 15 s.</li>
-      <li><b>En tête</b> : <code>titre: …</code> (sans la durée : l’app la calcule et l’affiche dans l’encadré « Programme », avec le nombre d’exercices, les repos et la FC max), <code>type: salle</code> ou <code>maison</code>, <code>objectif: …</code> (affiché sous le titre), <code>montre: Marche sur tapis (Treadmill walking)</code> (sport à lancer sur la montre, rappelé à voix haute au démarrage), <code>avant: …</code> (une ligne par chose à vérifier avant de commencer, à cocher), <code>ceinture: recommandée</code> (l’app demande si vous portez la ceinture cardio et le note dans le rapport), et <code>fc max: 155</code> : la FC max de la séance, au-dessus de laquelle l’app donne l’alerte (bandeau rouge, bips, voix), quelle que soit la plage de l’étape. Elle est fixée dans la séance et ne se modifie pas dans l’app ; si une plage d’étape va plus haut, la FC max prend cette valeur. <code>#</code> pour un commentaire.</li>
-    </ul>
-  </details>
-  <details>
-    <summary>Connexion de la montre</summary>
-    <ul>
-      <li><b>Navigateur</b> : Chrome sur Android, ou Brave avec <code>brave://flags</code> → « Web Bluetooth API » activé. Impossible sur iPhone / iPad.</li>
-      <li><b>Sur la montre</b> : activez le partage (diffusion) de la fréquence cardiaque. Sur Suunto, l’option se trouve dans les réglages de connectivité ou pendant l’exercice.</li>
-      <li><b>Sur le téléphone</b> : Bluetooth <b>et</b> localisation activés (Android l’exige pour trouver les appareils Bluetooth).</li>
-      <li><b>La montre n’apparaît pas</b> : appuyez de nouveau sur « Connecter la montre » : la recherche liste alors tous les appareils Bluetooth.</li>
-      <li><b>Montre déjà utilisée</b> : si la FC est diffusée vers un autre appareil (tapis, autre téléphone), déconnectez-le.</li>
-      <li><b>Bluetooth bloqué</b> : icône à gauche de l’adresse → Autorisations → autorisez le Bluetooth (ou les appareils à proximité).</li>
-      <li><b>Pendant la séance</b> : gardez l’app à l’écran. En cas de coupure, elle se reconnecte toute seule (bouton orange « Reconnexion… »).</li>
-    </ul>
-  </details>
-  <details>
-    <summary>Vie privée</summary>
-    <p>Aucun compte, aucun serveur : rien n’est envoyé sur Internet et aucune séance n’est conservée. Le résultat n’existe que le temps de le copier ou de le partager.</p>
-    <p>Seuls quelques réglages restent sur ce téléphone, pour votre confort : la dernière séance collée, le choix des annonces vocales, le thème (sombre ou clair), et ce qui a déjà été montré (fenêtre de bienvenue, dernière version vue pour « Quoi de neuf ? »).</p>
-  </details>
-  <button class="primary" type="button" data-close>Fermer</button>
+<!-- User manual (manuel.html) in a full-screen frame, over the current screen (a running workout keeps going).
+     Its « ‹ Retour » button or Esc closes it. -->
+<dialog class="manDlg" id="manualDialog" aria-label="Aide">
+  <iframe id="manualFrame" title="Manuel FitPacer"></iframe>
 </dialog>
 
 <dialog class="dialog info" id="welcomeDialog" aria-labelledby="welcomeT">
@@ -280,7 +250,6 @@
     <dt>Auteur</dt><dd>Alexandre Gambier, avec l’aide de l’IA</dd>
     <dt>Version</dt><dd class="num" id="appVersion"></dd>
     <dt>Format de séance</dt><dd id="aboutFmt"></dd>
-    <dt>Code source</dt><dd><a href="https://github.com/agambier/fitpacer" target="_blank" rel="noopener">github.com/agambier/fitpacer</a></dd>
   </dl>
   <p class="help">FitPacer vous cadence pendant les séances préparées par une IA. Aucune donnée n’est envoyée ni conservée : tout reste sur le téléphone.</p>
   <button class="primary" type="button" data-close>Fermer</button>
