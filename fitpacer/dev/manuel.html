@@ -7,8 +7,8 @@
 <link rel="icon" href="/fitpacer/dev/favicon-dev.svg" type="image/svg+xml">
 <title>Manuel FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/dev/assets/manuel-BfFAufnA.js"></script>
-  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-B3AW3dm8.js">
+  <script type="module" crossorigin src="/fitpacer/dev/assets/manuel-BJC4_JsI.js"></script>
+  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-Cy6wyWsG.js">
   <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/version-DUwlkYKb.css">
   <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/manuel-LjzBEpEU.css">
 <link rel="manifest" href="/fitpacer/dev/manifest.webmanifest"></head>
@@ -359,7 +359,28 @@ Retour au calme | <span class="p">5:00</span> | 5,5 → 3 km/h par 1 en 3:00 | 0
       <li><span>11</span><p><b>Courbe de FC</b> depuis le début. Le pointillé orange est la FC max.</p></li>
       <li><span>12</span><p><b>Préc.</b> / <b>Pause</b> / <b>Suiv.</b>, toujours en bas de l’écran.</p></li>
     </ol>
-    <p>Un bouton orange <b>!</b> peut apparaître en haut, à gauche du bouton de la voix : il signale un avertissement (montre impossible à connecter sur ce navigateur, montre non connectée, FC max absente de la séance…), avec leur nombre s’il y en a plusieurs. Touchez-le pour les lire ; touchez à côté ou <b>✕</b> pour refermer.</p>
+    <p>Un bouton orange <b>!</b> peut aussi apparaître en haut, à gauche du bouton de la voix : c’est un avertissement. Voir <a href="#avertissements">Le bouton « ! »</a> ci-dessous.</p>
+  </div>
+
+  <div class="row" id="avertissements">
+    <div class="prose">
+      <h3>Le bouton « ! » : les avertissements</h3>
+      <p>Quand l’app a quelque chose à vous signaler sur la séance en cours, un bouton orange <b>!</b> apparaît en haut de l’écran, à gauche du bouton de la voix. S’il y a plusieurs avertissements, une pastille indique leur nombre. Il ne fait ni bip ni annonce vocale, et la séance continue normalement.</p>
+      <p>Touchez-le pour lire le détail ; touchez à côté ou <b>✕</b> pour refermer. Les avertissements possibles :</p>
+      <ul>
+        <li><b>Montre non connectée</b> : la connexion à la montre a échoué au démarrage, la séance se fait sans fréquence cardiaque. Vous pouvez la connecter à tout moment avec le bouton « Connecter la montre » ; l’avertissement disparaît aussitôt.</li>
+        <li><b>Séance sans FC</b> : ce navigateur ne permet pas de connecter la montre. Voir <a href="#montre">Connecter la montre</a>.</li>
+        <li><b>FC max absente de la séance</b> : l’app ne pourra pas vous alerter si votre cœur monte trop haut. Demandez à votre IA d’ajouter la ligne <code>fc max:</code> à la séance.</li>
+      </ul>
+      <p>Sans avertissement, le bouton n’est pas affiché. À ne pas confondre avec le <b>bandeau rouge</b> de FC max dépassée, qui, lui, sonne et vibre (voir plus bas).</p>
+    </div>
+    <figure class="shot">
+    <button type="button" data-cap="Le bouton « ! » touché : l’avertissement s’affiche." aria-label="Agrandir : Le bouton « ! » touché : l’avertissement s’affiche.">
+      <img class="d" src="/fitpacer/dev/assets/run-warn-DNQnaJE0.webp" alt="Le bouton « ! » touché : l’avertissement s’affiche." loading="lazy" decoding="async">
+      <img class="l" src="/fitpacer/dev/assets/run-warn-BKuOX2pz.webp" alt="Le bouton « ! » touché : l’avertissement s’affiche." loading="lazy" decoding="async">
+    </button>
+    <figcaption>Le bouton « ! » touché : l’avertissement s’affiche.</figcaption>
+  </figure>
   </div>
 
   <div class="row">
@@ -634,6 +655,7 @@ Retour au calme | <span class="p">5:00</span> | 5,5 → 3 km/h par 1 en 3:00 | 0
     <details><summary>Je n’entends pas la voix.</summary><div class="a"><p>Vérifiez que le bouton 🔊 est actif et que le volume « multimédia » du téléphone est monté. La voix utilise la synthèse vocale du téléphone : sur Android, réglez-la dans Paramètres › Accessibilité › Synthèse vocale.</p></div></details>
     <details><summary>Pas de bip au démarrage.</summary><div class="a"><p>Les sons s’activent quand vous touchez « Démarrer la séance ». Si le téléphone est en mode silencieux, les vibrations restent.</p></div></details>
     <details><summary>L’écran s’est éteint pendant la séance.</summary><div class="a"><p>L’app garde l’écran allumé tant qu’elle est au premier plan. Si vous changez d’app, elle reprend ce réglage à votre retour, et le chrono reste juste.</p></div></details>
+    <details><summary>Un « ! » orange est apparu en haut de l’écran.</summary><div class="a"><p>C’est un avertissement sur la séance : montre non connectée, FC max absente… Touchez-le pour le lire. Voir <a href="#avertissements">Le bouton « ! »</a>.</p></div></details>
     <details><summary>La FC affiche « -- ».</summary><div class="a"><p>La montre n’envoie plus de mesure depuis quelques secondes. Vérifiez que le partage de FC est toujours actif sur la montre. Voir <a href="#montre">Connecter la montre</a>.</p></div></details>
     <details><summary>« Coller » ne fait rien.</summary><div class="a"><p>Autorisez l’accès au presse-papiers si le navigateur le demande. Sinon, touchez <b>Modifier</b>, faites un appui long dans la zone de texte, puis <b>Coller</b>, et validez.</p></div></details>
     <details><summary>Je me suis trompé d’étape.</summary><div class="a"><p>Utilisez <b>◀ Préc.</b> pour revenir. L’étape est reprise depuis le début.</p></div></details>
