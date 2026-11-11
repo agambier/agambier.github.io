@@ -9,10 +9,10 @@
 <link rel="apple-touch-icon" href="/fitpacer/apple-touch-icon.png">
 <title>FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/assets/main-KWai1xyt.js"></script>
-  <link rel="modulepreload" crossorigin href="/fitpacer/assets/version-9kE-LeV-.js">
+  <script type="module" crossorigin src="/fitpacer/assets/main-DS47Xhgr.js"></script>
+  <link rel="modulepreload" crossorigin href="/fitpacer/assets/version-AXb_yixP.js">
   <link rel="stylesheet" crossorigin href="/fitpacer/assets/version-CEnomOl5.css">
-  <link rel="stylesheet" crossorigin href="/fitpacer/assets/main-DNPSnSTx.css">
+  <link rel="stylesheet" crossorigin href="/fitpacer/assets/main-Cfqefsho.css">
 <link rel="manifest" href="/fitpacer/manifest.webmanifest"></head>
 <body>
 <header class="top">
@@ -38,6 +38,7 @@
  </div>
  <div class="hrRow">
   <div class="hr stale num" id="hrBox"><span class="v" id="hrVal">--</span><span class="u">bpm</span></div>
+  <button class="icon warnBtn" id="warnBtn" type="button" aria-haspopup="dialog" hidden><span aria-hidden="true">!</span><span class="n num" id="warnN"></span></button>
   <button class="icon" id="voiceBtn" type="button" aria-pressed="true" title="Annonces vocales">🔊</button>
   <button class="bt" id="btBtn" data-s="off" type="button">Connecter la montre</button>
  </div>
@@ -109,6 +110,9 @@
   <section class="screen" id="run" hidden>
     <div class="dangerBanner" id="danger" role="alert" hidden></div>
     <div class="stage" id="stage">
+      <div class="grpBar loopBar" id="loop" hidden><span class="gn"><span class="lx num" id="loopX"></span><span id="loopName"></span></span><span class="gi num" id="loopInfo"></span></div>
+      <div class="grpDots loopDots" id="loopDots" aria-hidden="true" hidden></div>
+      <div class="grpDots loopSteps" id="loopSteps" aria-hidden="true" hidden></div>
       <div class="grpBar" id="grp" hidden><span class="gn" id="grpName"></span><span class="gi num" id="grpInfo"></span></div>
       <div class="grpDots" id="grpDots" aria-hidden="true" hidden></div>
       <p class="stepname" id="sName"></p>
@@ -179,9 +183,15 @@
     <button class="primary" id="againBtn" type="button">Revenir au programme</button>
   </section>
 </main>
+<!-- Session warnings ("!" button in the header): no watch, no HR max… Tap outside, ✕ or Esc closes it. -->
+<dialog class="warnDlg" id="warnDlg" aria-labelledby="warnT">
+  <div class="wh"><h2 id="warnT"></h2><button type="button" id="warnClose" aria-label="Fermer">✕</button></div>
+  <div id="warnList"></div>
+</dialog>
 <!-- Exercise list (full screen). Back button / Esc closes it. -->
 <dialog class="fullDlg" id="planDialog" aria-labelledby="planT">
   <div class="fh"><button type="button" id="planBack">‹ Retour</button><h2 id="planT">Déroulé de la séance</h2></div>
+  <div class="planTot"><span class="lab">Durée totale estimée</span><span class="big num" id="planTot"></span></div>
   <ul class="plan num" id="plan"></ul>
 </dialog>
 <!-- Report viewer (full screen, read-only). Back button / Esc closes it. -->
