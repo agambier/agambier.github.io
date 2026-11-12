@@ -9,10 +9,10 @@
 <link rel="apple-touch-icon" href="/fitpacer/dev/apple-touch-icon-dev.png">
 <title>FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/dev/assets/main-D0adAa0t.js"></script>
+  <script type="module" crossorigin src="/fitpacer/dev/assets/main-McBLZ_rT.js"></script>
   <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-BteaPM36.js">
   <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/version-DUwlkYKb.css">
-  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-CYuNx7fZ.css">
+  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-qtdZNF5v.css">
 <link rel="manifest" href="/fitpacer/dev/manifest.webmanifest"></head>
 <body>
 <header class="top">
@@ -149,6 +149,8 @@
   <section class="screen" id="done" hidden>
     <h1>Séance terminée</h1>
     <div class="stats num" id="stats"></div>
+    <!-- Shown instead of the chart when no heart rate was received during the session. -->
+    <div class="noHr" id="noHr" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/><path d="M4 4l16 16"/></svg><span>Fréquence cardiaque non disponible</span></div>
     <div class="hrchart" id="chart2" role="button" tabindex="0" aria-label="Agrandir la courbe de fréquence cardiaque">
       <div class="plot"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-7 7M10 20H4v-6M4 20l7-7"/></svg></span><svg class="spark" viewBox="0 0 300 105" preserveAspectRatio="none" aria-label="Courbe de fréquence cardiaque de la séance"></svg></div>
       <div class="marks"></div>
