@@ -9,10 +9,10 @@
 <link rel="apple-touch-icon" href="/fitpacer/dev/apple-touch-icon-dev.png">
 <title>FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/dev/assets/main-Bkj4tPWd.js"></script>
-  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-Bgnf1EZF.js">
+  <script type="module" crossorigin src="/fitpacer/dev/assets/main-CiR3d1Uh.js"></script>
+  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-BteaPM36.js">
   <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/version-DUwlkYKb.css">
-  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-Cfqefsho.css">
+  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-ADY4Z6_w.css">
 <link rel="manifest" href="/fitpacer/dev/manifest.webmanifest"></head>
 <body>
 <header class="top">
@@ -134,7 +134,7 @@
         <span class="h">Touchez « Reprendre » pour continuer</span>
       </div>
     </div>
-    <div class="next"><span class="k">Ensuite</span><span class="n" id="nextTxt"></span></div>
+    <button class="next" id="nextBox" type="button" aria-haspopup="dialog"><span class="k">Ensuite</span><span class="n" id="nextTxt"></span><span class="ch" aria-hidden="true">›</span></button>
     <div class="segs" id="segs"></div>
     <div class="times num"><span id="elapsed">0:00</span><span id="left"></span></div>
     <svg class="spark" id="spark" viewBox="0 0 300 70" preserveAspectRatio="none" aria-label="Courbe de fréquence cardiaque"></svg>
@@ -187,6 +187,18 @@
 <dialog class="warnDlg" id="warnDlg" aria-labelledby="warnT">
   <div class="wh"><h2 id="warnT"></h2><button type="button" id="warnClose" aria-label="Fermer">✕</button></div>
   <div id="warnList"></div>
+</dialog>
+<!-- "Reste de la séance" (bottom panel, opened from "Ensuite"): what is left, round by round. The session
+     goes on behind it. Tap outside, ✕, Esc or the back button closes it. -->
+<dialog class="upDlg" id="upDlg" aria-labelledby="upT">
+  <div class="grab" aria-hidden="true"></div>
+  <div class="uh"><h2 id="upT">Reste de la séance</h2><button type="button" id="upClose" aria-label="Fermer">✕</button></div>
+  <div class="upTot num">
+    <div><div class="k">Reste</div><div class="v" id="upLeft"></div></div>
+    <div><div class="k">Fin vers</div><div class="v" id="upEnd"></div></div>
+    <div><div class="k">Étapes</div><div class="v" id="upCount"></div></div>
+  </div>
+  <div class="upLst" id="upLst"></div>
 </dialog>
 <!-- Exercise list (full screen). Back button / Esc closes it. -->
 <dialog class="fullDlg" id="planDialog" aria-labelledby="planT">
