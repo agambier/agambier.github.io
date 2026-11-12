@@ -9,10 +9,10 @@
 <link rel="apple-touch-icon" href="/fitpacer/dev/apple-touch-icon-dev.png">
 <title>FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/dev/assets/main-DFkhw3lu.js"></script>
-  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-DMLl22-W.js">
+  <script type="module" crossorigin src="/fitpacer/dev/assets/main-CEKbA0c3.js"></script>
+  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-BwFrL05d.js">
   <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/version-DUwlkYKb.css">
-  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-CP3SQJMD.css">
+  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-DCgW7NK3.css">
 <link rel="manifest" href="/fitpacer/dev/manifest.webmanifest"></head>
 <body>
 <header class="top">
@@ -107,6 +107,24 @@
   </section>
 
   <!-- Déroulé -->
+  <!-- Countdown before the session (v26.11.13): time to start recording on the watch. Starts the session at 0. -->
+  <section class="screen" id="go" hidden>
+    <div class="goCard">
+      <span class="k">Avant de démarrer</span>
+      <h1>Lancez l’enregistrement sur la montre</h1>
+      <div class="goWatch"><span class="wsBox" id="goIcon"></span><div><b id="goName"></b><i id="goAlt"></i></div></div>
+    </div>
+    <div class="goRing" id="goRing" role="timer" aria-live="off">
+      <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="trk" cx="60" cy="60" r="52"/><circle class="arc" id="goArc" cx="60" cy="60" r="52" pathLength="100"/></svg>
+      <span class="n num" id="goN">10</span><span class="s">secondes</span>
+    </div>
+    <div class="goBtns">
+      <button type="button" id="goMore">+10 s</button>
+      <button type="button" class="go" id="goNow">C’est lancé ▶</button>
+    </div>
+    <button type="button" class="goCancel" id="goCancel">Annuler</button>
+  </section>
+
   <section class="screen" id="run" hidden>
     <div class="dangerBanner" id="danger" role="alert" hidden></div>
     <div class="stage" id="stage">
