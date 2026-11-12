@@ -9,10 +9,10 @@
 <link rel="apple-touch-icon" href="/fitpacer/dev/apple-touch-icon-dev.png">
 <title>FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/dev/assets/main-CNRuhNv0.js"></script>
+  <script type="module" crossorigin src="/fitpacer/dev/assets/main-DKwnBFOX.js"></script>
   <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-BteaPM36.js">
   <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/version-DUwlkYKb.css">
-  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-BlVjH_J7.css">
+  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-BYKdbdek.css">
 <link rel="manifest" href="/fitpacer/dev/manifest.webmanifest"></head>
 <body>
 <header class="top">
@@ -194,9 +194,10 @@
   <div id="warnList"></div>
 </dialog>
 <!-- "Reste de la séance" (bottom panel, opened from "Ensuite"): what is left, round by round. The session
-     goes on behind it. Tap outside, ✕, Esc or the back button closes it. -->
+     goes on behind it. Tap outside, ✕, Esc, the back button or a drag down on the handle closes it;
+     a drag up (or a tap) on the handle enlarges it. -->
 <dialog class="upDlg" id="upDlg" aria-labelledby="upT">
-  <div class="grab" aria-hidden="true"></div>
+  <div class="grab" id="upGrab" title="Glisser vers le bas pour fermer, vers le haut pour agrandir" aria-hidden="true"></div>
   <div class="uh"><h2 id="upT">Reste de la séance</h2><button type="button" id="upClose" aria-label="Fermer">✕</button></div>
   <div class="upTot num">
     <div><div class="k">Reste</div><div class="v" id="upLeft"></div></div>
