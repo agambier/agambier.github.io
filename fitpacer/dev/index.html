@@ -9,10 +9,10 @@
 <link rel="apple-touch-icon" href="/fitpacer/dev/apple-touch-icon-dev.png">
 <title>FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/dev/assets/main-VxIqN8Xr.js"></script>
+  <script type="module" crossorigin src="/fitpacer/dev/assets/main-BO5gv6u1.js"></script>
   <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-DOt7-qJG.js">
   <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/version-DUwlkYKb.css">
-  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-BVuuFSl8.css">
+  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-YEJk6WIv.css">
 <link rel="manifest" href="/fitpacer/dev/manifest.webmanifest"></head>
 <body>
 <header class="top">
@@ -232,15 +232,9 @@
 <dialog class="fullDlg hrxDlg" id="hrxDlg" aria-labelledby="hrxT">
   <div class="hrxIn" id="hrxIn">
   <div class="fh"><button type="button" id="hrxBack">‹ Retour</button><h2 id="hrxT">Fréquence cardiaque</h2><button type="button" class="turn" id="hrxTurn" aria-label="Tourner la courbe en large"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.6-5.9"/><path d="M20 3.5v4.5h-4.5"/></svg></button></div>
-  <div class="hrxRo num" aria-live="polite">
-    <div class="bpm"><b id="hrxBpm"></b><small>bpm</small></div>
-    <div class="tm"><span>À </span><b id="hrxSince"></b><span> – <span id="hrxClock"></span></span></div>
-    <div class="ex" id="hrxStep"></div>
-    <div class="dt" id="hrxDetail"></div>
-  </div>
   <div class="hrxCh">
     <div class="yax num" id="hrxY"></div>
-    <div class="plot" id="hrxPlot"><svg id="hrxSvg" preserveAspectRatio="none" aria-label="Courbe de fréquence cardiaque : touchez et glissez pour la lire"></svg><div class="dot" id="hrxDot"></div><div class="tip num" id="hrxTip"></div></div>
+    <div class="plot" id="hrxPlot"><svg id="hrxSvg" preserveAspectRatio="none" aria-label="Courbe de fréquence cardiaque : touchez et glissez pour la lire"></svg><div class="dot" id="hrxDot"></div><div class="tip num" id="hrxTip" aria-live="polite"><div class="l1"><b id="hrxBpm"></b> bpm<span class="tm">À <b id="hrxSince"></b> – <span id="hrxClock"></span></span></div><div class="ex" id="hrxStep"></div><div class="dt" id="hrxDetail"></div></div></div>
     <div class="marks num" id="hrxMarks"></div>
     <div class="xax num" id="hrxX"></div>
   </div>
