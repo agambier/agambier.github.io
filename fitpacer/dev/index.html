@@ -9,10 +9,10 @@
 <link rel="apple-touch-icon" href="/fitpacer/dev/apple-touch-icon-dev.png">
 <title>FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/dev/assets/main-D2yapL_G.js"></script>
+  <script type="module" crossorigin src="/fitpacer/dev/assets/main-VJcZGgjh.js"></script>
   <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-DOt7-qJG.js">
   <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/version-DUwlkYKb.css">
-  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-C3VQ1GNH.css">
+  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-DDdRuICp.css">
 <link rel="manifest" href="/fitpacer/dev/manifest.webmanifest"></head>
 <body>
 <header class="top">
@@ -160,11 +160,16 @@
     <div class="times num"><span id="elapsed">0:00</span><span id="left"></span></div>
     <svg class="spark" id="spark" viewBox="0 0 300 70" preserveAspectRatio="none" aria-label="Courbe de fréquence cardiaque"></svg>
     <!-- Discreet tools above the bottom buttons. « ＋ Étape » needs a long press (no accidental tap): adds an
-         open-ended step, before the current one in its first 10 s, otherwise after it (src/core/session.ts). -->
-    <div class="tools" id="tools">
-      <button type="button" class="addBtn" id="addBtn" aria-label="Ajouter une étape (appui long)"><span class="fill" aria-hidden="true"></span><span class="lb">＋ Étape <small>appui long</small></span></button>
+         open-ended step, before the current one in its first 10 s, otherwise it interrupts it (src/core/session.ts).
+         « Verrouiller » (simple tap) locks the screen (phone in a pocket): only « Fait ✓ » / « Terminer l'étape »
+         stay active; long press on the wide button to unlock. -->
+    <div class="runTools" id="runTools">
+      <button type="button" class="addBtn hold" id="addBtn" aria-label="Ajouter une étape (appui long)"><span class="fill" aria-hidden="true"></span><span class="lb">＋ Étape <small>appui long</small></span></button>
       <span class="cnt num" id="addCnt"></span>
+      <button type="button" class="lockBtn" id="lockBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>Verrouiller</span></button>
+      <button type="button" class="unlockBtn hold" id="unlockBtn" hidden aria-label="Déverrouiller (appui long)"><span class="fill" aria-hidden="true"></span><span class="lb"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><b>Verrouillé</b> <small>· maintenez pour déverrouiller</small></span></button>
     </div>
+    <div class="lockHint" id="lockHint" role="status" hidden>Écran verrouillé : maintenez le cadenas</div>
     <div class="ctrls">
       <button id="prevBtn" type="button" aria-label="Étape précédente">◀ Préc.</button>
       <button class="go" id="pauseBtn" type="button">Pause</button>
