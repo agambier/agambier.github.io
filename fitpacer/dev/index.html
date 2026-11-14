@@ -9,10 +9,10 @@
 <link rel="apple-touch-icon" href="/fitpacer/dev/apple-touch-icon-dev.png">
 <title>FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/dev/assets/main-BhRDS0WA.js"></script>
+  <script type="module" crossorigin src="/fitpacer/dev/assets/main-D2yapL_G.js"></script>
   <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-DOt7-qJG.js">
   <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/version-DUwlkYKb.css">
-  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-DidifSrX.css">
+  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-C3VQ1GNH.css">
 <link rel="manifest" href="/fitpacer/dev/manifest.webmanifest"></head>
 <body>
 <header class="top">
@@ -151,6 +151,7 @@
       <div class="pauseBox" id="pauseBox" hidden>
         <span class="k">En pause depuis</span>
         <span class="v num" id="pauseFor">0:00</span>
+        <span class="pzHr num" id="pauseHr" hidden></span>
         <span class="h">Touchez « Reprendre » pour continuer</span>
       </div>
     </div>
@@ -182,6 +183,7 @@
       <div class="marks"></div>
     </div>
     <p class="hrnote" hidden></p>
+    <p class="pzNote" id="pzNote" hidden></p>
     <!-- HR per step: folded by default; scrolls inside its frame when long. -->
     <button type="button" class="addNameBtn" id="addNameBtn" hidden></button>
     <details class="perStepBox" id="perStepBox" hidden>
