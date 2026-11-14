@@ -9,10 +9,10 @@
 <link rel="apple-touch-icon" href="/fitpacer/dev/apple-touch-icon-dev.png">
 <title>FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/dev/assets/main-BO5gv6u1.js"></script>
+  <script type="module" crossorigin src="/fitpacer/dev/assets/main-1WDZKLX4.js"></script>
   <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-DOt7-qJG.js">
   <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/version-DUwlkYKb.css">
-  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-YEJk6WIv.css">
+  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-DidifSrX.css">
 <link rel="manifest" href="/fitpacer/dev/manifest.webmanifest"></head>
 <body>
 <header class="top">
@@ -133,6 +133,8 @@
       <div class="grpDots loopSteps" id="loopSteps" aria-hidden="true" hidden></div>
       <div class="grpBar" id="grp" hidden><span class="gn" id="grpName"></span><span class="gi num" id="grpInfo"></span></div>
       <div class="grpDots" id="grpDots" aria-hidden="true" hidden></div>
+      <div class="addToast" id="addToast" role="status" hidden></div>
+      <span class="addTag" id="sAdd" hidden>Ajoutée</span>
       <p class="stepname" id="sName"></p>
       <span class="rep num" id="sRep"></span>
       <div class="params num" id="params"></div>
@@ -156,6 +158,12 @@
     <div class="segs" id="segs"></div>
     <div class="times num"><span id="elapsed">0:00</span><span id="left"></span></div>
     <svg class="spark" id="spark" viewBox="0 0 300 70" preserveAspectRatio="none" aria-label="Courbe de fréquence cardiaque"></svg>
+    <!-- Discreet tools above the bottom buttons. « ＋ Étape » needs a long press (no accidental tap): adds an
+         open-ended step, before the current one in its first 10 s, otherwise after it (src/core/session.ts). -->
+    <div class="tools" id="tools">
+      <button type="button" class="addBtn" id="addBtn" aria-label="Ajouter une étape (appui long)"><span class="fill" aria-hidden="true"></span><span class="lb">＋ Étape <small>appui long</small></span></button>
+      <span class="cnt num" id="addCnt"></span>
+    </div>
     <div class="ctrls">
       <button id="prevBtn" type="button" aria-label="Étape précédente">◀ Préc.</button>
       <button class="go" id="pauseBtn" type="button">Pause</button>
@@ -175,6 +183,7 @@
     </div>
     <p class="hrnote" hidden></p>
     <!-- HR per step: folded by default; scrolls inside its frame when long. -->
+    <button type="button" class="addNameBtn" id="addNameBtn" hidden></button>
     <details class="perStepBox" id="perStepBox" hidden>
       <summary><span class="t">Fréquence cardiaque par étape</span><span class="n num" id="perStepN"></span><span class="ch" aria-hidden="true">›</span></summary>
       <div class="sc" id="perStepSc"><table class="num" id="perStep"></table></div>
@@ -325,6 +334,13 @@
     <button class="primary" id="watchYes" type="button">Oui, connecter</button>
     <button class="ghost" id="watchNo" type="button">Non, démarrer sans</button>
   </div>
+</dialog>
+<!-- End of the session: name and short description of each step added with « ＋ Étape ». -->
+<dialog class="dialog addDlg" id="addDlg" aria-labelledby="addDlgT">
+  <h2 id="addDlgT"></h2>
+  <div id="addLst"></div>
+  <p class="help">Nom, puis description courte (facultative).</p>
+  <div class="dbtns"><button class="primary" type="button" id="addSave">Enregistrer</button><button class="ghost" type="button" id="addLater">Plus tard</button></div>
 </dialog>
 <dialog class="dialog" id="confirmDialog" aria-labelledby="confirmQ">
   <p class="dq" id="confirmQ"></p>
