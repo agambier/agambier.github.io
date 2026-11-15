@@ -9,10 +9,10 @@
 <link rel="apple-touch-icon" href="/fitpacer/dev/apple-touch-icon-dev.png">
 <title>FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/dev/assets/main-DLq2481j.js"></script>
+  <script type="module" crossorigin src="/fitpacer/dev/assets/main-BiDu1P1V.js"></script>
   <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-CDCSRgNk.js">
   <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/version-DUwlkYKb.css">
-  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-D5SCNM_4.css">
+  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-CLjJvgr9.css">
 <link rel="manifest" href="/fitpacer/dev/manifest.webmanifest"></head>
 <body>
 <header class="top">
@@ -171,11 +171,12 @@
       <button type="button" class="unlockBtn hold" id="unlockBtn" hidden aria-label="Déverrouiller (appui long)"><span class="fill" aria-hidden="true"></span><span class="lb"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><b>Verrouillé</b> <small>· maintenez pour déverrouiller</small></span></button>
     </div>
     <div class="lockHint" id="lockHint" role="status" hidden>Écran verrouillé : maintenez le cadenas</div>
-    <span class="lockChip" id="lockChip" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Verrouillé</span>
     <div class="ctrls">
       <button id="prevBtn" type="button" aria-label="Étape précédente">◀ Préc.</button>
       <button class="go" id="pauseBtn" type="button">Pause</button>
       <button id="nextBtn" type="button" aria-label="Étape suivante">Suiv. ▶</button>
+      <!-- Locked screen: replaces the three buttons (they cannot be used anyway) with a slim hatched strip. -->
+      <span class="lockBar" id="lockBar" role="status"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Verrouillé</span>
     </div>
   </section>
 
