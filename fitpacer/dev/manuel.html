@@ -7,10 +7,10 @@
 <link rel="icon" href="/fitpacer/dev/favicon-dev.svg" type="image/svg+xml">
 <title>Manuel FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/dev/assets/manuel-DLpVQhVC.js"></script>
-  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-C4AAQqm4.js">
+  <script type="module" crossorigin src="/fitpacer/dev/assets/manuel-C6peT245.js"></script>
+  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-E1xqCSOf.js">
   <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/version-DUwlkYKb.css">
-  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/manuel-By1kUWEE.css">
+  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/manuel-DXZzlkSK.css">
 <link rel="manifest" href="/fitpacer/dev/manifest.webmanifest"></head>
 <body>
 <header class="top">
@@ -121,6 +121,7 @@
       <div class="note warn"><span class="t">À refaire</span><p>Quand « Quoi de neuf ? » vous dit que les consignes ont changé, recopiez-les dans les instructions de votre IA.</p></div>
       <h3>Demander une séance</h3>
       <p>Ensuite, parlez simplement : « Prépare ma séance tapis de ce soir, 35 minutes, je suis un peu fatigué. » L’IA répond avec un bloc de texte au format FitPacer. <b>Copiez-le</b> (appui long, puis Copier) et passez à l’étape suivante.</p>
+      <p><button type="button" class="vidLink" data-video="charger-seance">▶ Voir la vidéo : de la conversation avec l’IA à l’écran Programme</button></p>
     </div>
     <figure class="shot">
     <button type="button" data-cap="Menu ☰ › Consignes pour l’IA : les boutons Copier et Télécharger." aria-label="Agrandir : Menu ☰ › Consignes pour l’IA : les boutons Copier et Télécharger.">
@@ -136,6 +137,12 @@
 <section class="doc" id="programme" data-title="Charger une séance">
   <div class="sec-head"><span class="n">03</span><h2>Charger une séance</h2></div>
   <p class="intro">L’écran <b>Programme</b> est le point de départ. Il présente la séance avant de la lancer : objectif, durée, ce qu’il faut préparer et le détail des exercices.</p>
+  <figure class="vid">
+    <button type="button" data-video="charger-seance" aria-label="Voir la vidéo : charger une séance">
+      <span class="poster"><img src="./videos/charger-seance.webp" alt="Vidéo : charger une séance." loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span>
+      <span class="txt"><span class="k">Vidéo · 50 s</span><b>Charger une séance</b><span>La séance demandée à l’IA, copiée puis collée dans FitPacer, et la lecture de l’écran Programme.</span></span>
+    </button>
+  </figure>
   <div class="row">
     <div class="prose">
       <h3>Quatre boutons en haut de l’écran</h3>
@@ -823,6 +830,15 @@ Retour au calme | <span class="p">5:00</span> | 5,5 → 3 km/h par 1 en 3:00 | 0
   <div class="in">
     <img id="lbImg" alt="">
     <div class="bar"><button type="button" id="lbPrev" aria-label="Capture précédente">‹</button><p id="lbCap"></p><button type="button" id="lbNext" aria-label="Capture suivante">›</button><button type="button" id="lbClose">Fermer</button></div>
+  </div>
+</dialog>
+<dialog class="vd" id="vd" aria-label="Vidéo">
+  <div class="in">
+    <div class="vbar"><p id="vdTitle"></p><button type="button" id="vdClose" aria-label="Fermer la vidéo">✕</button></div>
+    <div class="stage">
+      <video id="vdVideo" playsinline muted controls preload="auto" disablepictureinpicture></video>
+      <p class="off" id="vdOff" hidden></p>
+    </div>
   </div>
 </dialog>
 </body>
