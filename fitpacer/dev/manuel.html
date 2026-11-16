@@ -7,7 +7,7 @@
 <link rel="icon" href="/fitpacer/dev/favicon-dev.svg" type="image/svg+xml">
 <title>Manuel FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/dev/assets/manuel-DMejgmSB.js"></script>
+  <script type="module" crossorigin src="/fitpacer/dev/assets/manuel-CWY4Vf_v.js"></script>
   <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-E1xqCSOf.js">
   <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/version-DUwlkYKb.css">
   <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/manuel-DfQGhW9R.css">
@@ -342,6 +342,18 @@ Retour au calme | <span class="p">5:00</span> | 5,5 → 3 km/h par 1 en 3:00 | 0
 <section class="doc" id="seance" data-title="Pendant la séance">
   <div class="sec-head"><span class="n">06</span><h2>Pendant la séance</h2></div>
   <p class="intro">L’écran de séance se lit <b>de loin</b>, sur le tapis ou depuis le sol. Il reste allumé tout le long. Vous n’avez rien à toucher pour les étapes chronométrées : l’app passe seule à la suivante, avec des bips et une annonce vocale.</p>
+  <figure class="vid">
+    <button type="button" data-video="pendant-seance" aria-label="Voir la vidéo : pendant la séance">
+      <span class="poster"><img src="./videos/pendant-seance.webp" alt="Vidéo : pendant la séance." loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span>
+      <span class="txt"><span class="k">Vidéo · 49 s</span><b>Pendant la séance</b><span>Une séance de tapis : départ, étape en cours, paliers, plage de fréquence cardiaque et suite de la séance.</span></span>
+    </button>
+  </figure>
+  <figure class="vid">
+    <button type="button" data-video="seance-maison" aria-label="Voir la vidéo : séance à la maison">
+      <span class="poster"><img src="./videos/seance-maison.webp" alt="Vidéo : séance à la maison." loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span>
+      <span class="txt"><span class="k">Vidéo · 36 s</span><b>Séance à la maison</b><span>Exercice composé, répétitions avec « Fait ✓ », repos chronométré et bloc répété.</span></span>
+    </button>
+  </figure>
 
   <div class="row">
     <div class="prose">
@@ -456,6 +468,12 @@ Retour au calme | <span class="p">5:00</span> | 5,5 → 3 km/h par 1 en 3:00 | 0
       <h3>La plage de fréquence cardiaque</h3>
       <p>Quand l’étape a une plage (par exemple 120 – 135), l’app indique en permanence <b>« Dans la plage ✓ »</b>, <b>« Au-dessus : ralentissez »</b> ou <b>« En dessous : accélérez »</b>. Si vous restez dehors plus de 15 secondes, une voix vous le rappelle.</p>
       <h3>FC max dépassée</h3>
+      <figure class="vid">
+        <button type="button" data-video="alertes-fc" aria-label="Voir la vidéo : alertes de fréquence cardiaque">
+          <span class="poster"><img src="./videos/alertes-fc.webp" alt="Vidéo : alertes de fréquence cardiaque." loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span>
+          <span class="txt"><span class="k">Vidéo · 23 s</span><b>Alertes de fréquence cardiaque</b><span>Au-dessus de la plage, puis de la FC max, et le bouton « ! » des avertissements.</span></span>
+        </button>
+      </figure>
       <p>Au-delà de la FC max de la séance, un <b>bandeau rouge</b> apparaît en haut, avec bip grave, vibration et message vocal : « ralentissez, récupérez ». C’est un garde-fou : ralentissez jusqu’à ce qu’il disparaisse.</p>
     </div>
     <div class="shots">
@@ -540,6 +558,12 @@ Retour au calme | <span class="p">5:00</span> | 5,5 → 3 km/h par 1 en 3:00 | 0
   <div class="row">
     <div class="prose">
       <h3>Pause, Préc. et Suiv.</h3>
+      <figure class="vid">
+        <button type="button" data-video="pause-prec-suiv" aria-label="Voir la vidéo : pause, Préc. et Suiv.">
+          <span class="poster"><img src="./videos/pause-prec-suiv.webp" alt="Vidéo : pause, Préc. et Suiv.." loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span>
+          <span class="txt"><span class="k">Vidéo · 22 s</span><b>Pause, Préc. et Suiv.</b><span>Mettre en pause, reprendre, passer à l’étape suivante ou revenir à la précédente.</span></span>
+        </button>
+      </figure>
       <ul>
         <li><b>Pause</b> fige le chrono et affiche depuis combien de temps vous êtes arrêté. <b>Reprendre</b> relance là où vous en étiez. La FC continue d’être enregistrée : le cadre de pause montre la FC au début de la pause, la FC actuelle et la plus basse atteinte. Elle ne compte pas dans le min / moy / max de la séance. Les pauses de 10 s ou plus sont notées dans le rapport avec ces FC (l’IA y voit votre récupération), et marquées d’un trait orange sur la courbe du bilan.</li>
         <li><b>Suiv. ▶</b> passe à l’étape suivante. Si l’étape n’est pas finie, elle est notée <b>écourtée</b> (ou <b>sautée</b> si vous ne l’avez pas commencée).</li>
@@ -558,6 +582,12 @@ Retour au calme | <span class="p">5:00</span> | 5,5 → 3 km/h par 1 en 3:00 | 0
   <div class="row" id="ajout">
     <div class="prose">
       <h3>Ajouter une étape non prévue (＋ Étape)</h3>
+      <figure class="vid">
+        <button type="button" data-video="ajouter-etape" aria-label="Voir la vidéo : ajouter une étape">
+          <span class="poster"><img src="./videos/ajouter-etape.webp" alt="Vidéo : ajouter une étape." loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span>
+          <span class="txt"><span class="k">Vidéo · 21 s</span><b>Ajouter une étape</b><span>Maintenir « ＋ Étape », puis « Terminer l’étape » pour reprendre la séance prévue.</span></span>
+        </button>
+      </figure>
       <p>Vous faites quelque chose qui n’est pas dans la séance (marcher jusqu’à un abri, refaire vos lacets…) ? L’app peut l’ajouter, en deux gestes :</p>
       <ol>
         <li><b>Touchez l’écran</b> ailleurs que sur les boutons (le chrono, la courbe de FC…). Une petite barre apparaît <b>juste au-dessus de Préc. / Pause / Suiv.</b>, avec <b>＋ Étape</b> à gauche et <b>🔒 Verrouiller</b> à droite. Elle disparaît seule après 5 secondes : le reste du temps, elle est masquée pour ne pas cacher la courbe.</li>
@@ -598,6 +628,12 @@ Retour au calme | <span class="p">5:00</span> | 5,5 → 3 km/h par 1 en 3:00 | 0
   <div class="row" id="verrou">
     <div class="prose">
       <h3>Verrouiller l’écran (téléphone dans la poche)</h3>
+      <figure class="vid">
+        <button type="button" data-video="verrouiller" aria-label="Voir la vidéo : verrouiller l’écran">
+          <span class="poster"><img src="./videos/verrouiller.webp" alt="Vidéo : verrouiller l’écran." loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span>
+          <span class="txt"><span class="k">Vidéo · 20 s</span><b>Verrouiller l’écran</b><span>Verrouiller pendant la séance, puis maintenir la bande pour déverrouiller.</span></span>
+        </button>
+      </figure>
       <p>Avant de glisser le téléphone dans la poche : <b>touchez l’écran</b> pour faire apparaître la barre (voir ci-dessus), puis touchez <b>🔒 Verrouiller</b>, à droite de « ＋ Étape ». Un simple appui suffit.</p>
       <ul>
         <li>Préc., Pause et Suiv. laissent la place à une fine bande orange rayée <b>🔒 Verrouillé</b>, en bas de l’écran. Les autres boutons (■ Terminer, menu, voix, montre) sont grisés et ne réagissent plus.</li>
@@ -630,6 +666,12 @@ Retour au calme | <span class="p">5:00</span> | 5,5 → 3 km/h par 1 en 3:00 | 0
   <div class="row">
     <div class="prose">
       <h3>Terminer avant la fin</h3>
+      <figure class="vid">
+        <button type="button" data-video="terminer-avant" aria-label="Voir la vidéo : terminer avant la fin">
+          <span class="poster"><img src="./videos/terminer-avant.webp" alt="Vidéo : terminer avant la fin." loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span>
+          <span class="txt"><span class="k">Vidéo · 18 s</span><b>Terminer avant la fin</b><span>Arrêter la séance, confirmer, et ce que montre le bilan.</span></span>
+        </button>
+      </figure>
       <p><b>■ Terminer</b>, en haut, demande confirmation puis ouvre le bilan. Le rapport indique « arrêtée avant la fin » et liste les étapes non faites.</p>
       <div class="note tip"><span class="t">Écran</span><p>Gardez l’app au premier plan : l’écran reste allumé, et le chrono reste juste même si le téléphone se met brièvement en veille.</p></div>
     </div>
@@ -647,6 +689,12 @@ Retour au calme | <span class="p">5:00</span> | 5,5 → 3 km/h par 1 en 3:00 | 0
 <section class="doc" id="bilan" data-title="Le bilan et le rapport">
   <div class="sec-head"><span class="n">07</span><h2>Le bilan et le rapport</h2></div>
   <p class="intro">À la fin, une voix dit « Séance terminée. Bravo ! » et l’écran <b>Séance terminée</b> s’ouvre. Complétez-le en 20 secondes, puis envoyez le <b>rapport</b> à l’IA.</p>
+  <figure class="vid">
+    <button type="button" data-video="bilan-rapport" aria-label="Voir la vidéo : le bilan et le rapport pour l’IA">
+      <span class="poster"><img src="./videos/bilan-rapport.webp" alt="Vidéo : le bilan et le rapport pour l’IA." loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span>
+      <span class="txt"><span class="k">Vidéo · 32 s</span><b>Le bilan et le rapport pour l’IA</b><span>Lire le bilan et la courbe, noter son ressenti, puis partager le rapport : l’IA prépare la suite.</span></span>
+    </button>
+  </figure>
   <div class="row">
     <div class="prose">
       <h3>Ce que montre le bilan</h3>
