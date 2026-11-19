@@ -9,10 +9,10 @@
 <link rel="apple-touch-icon" href="/fitpacer/dev/apple-touch-icon-dev.png">
 <title>FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/dev/assets/main-BU0yXc6a.js"></script>
-  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-BeMhuffz.js">
+  <script type="module" crossorigin src="/fitpacer/dev/assets/main-DnBvvMcY.js"></script>
+  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-9X1dSZsh.js">
   <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/version-DUwlkYKb.css">
-  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-Jq3nA5kM.css">
+  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-B8ie3axT.css">
 <link rel="manifest" href="/fitpacer/dev/manifest.webmanifest"></head>
 <body>
 <header class="top">
@@ -34,6 +34,7 @@
     </div>
     <button type="button" role="menuitem" id="whatsNewBtn">Quoi de neuf ?</button>
     <button type="button" role="menuitem" data-open="aboutDialog">À propos</button>
+    <button type="button" role="menuitem" id="btLogBtn" hidden>Journal Bluetooth (dév.)</button>
   </nav>
  </div>
  <div class="hrRow">
@@ -337,6 +338,15 @@
   </dl>
   <p class="help">FitPacer vous cadence pendant les séances préparées par une IA. Aucune donnée n’est envoyée ni conservée : tout reste sur le téléphone.</p>
   <button class="primary" type="button" data-close>Fermer</button>
+</dialog>
+
+<dialog class="dialog info" id="btLogDialog" aria-labelledby="btLogT">
+  <h2 id="btLogT">Journal Bluetooth</h2>
+  <pre class="btLog" id="btLogText"></pre>
+  <div class="dbtns">
+    <button class="primary" type="button" data-close>Fermer</button>
+    <button class="ghost" type="button" id="btLogCopy">Copier</button>
+  </div>
 </dialog>
 
 <dialog class="dialog" id="watchDialog" aria-labelledby="watchQ">
