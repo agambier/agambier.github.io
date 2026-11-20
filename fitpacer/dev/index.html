@@ -9,10 +9,10 @@
 <link rel="apple-touch-icon" href="/fitpacer/dev/apple-touch-icon-dev.png">
 <title>FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/dev/assets/main-jZEa83uw.js"></script>
-  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-Df_0NDMA.js">
+  <script type="module" crossorigin src="/fitpacer/dev/assets/main-CKln4HF-.js"></script>
+  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-D0o0mVBU.js">
   <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/version-DUwlkYKb.css">
-  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-5poCUsYb.css">
+  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-B_gxAv0g.css">
 <link rel="manifest" href="/fitpacer/dev/manifest.webmanifest"></head>
 <body>
 <header class="top">
@@ -291,14 +291,34 @@
   </div>
 </dialog>
 <!-- Workout text editor (full screen). Back button / Esc = Annuler. -->
+<!-- Workout editor (src/editor.ts): « Visuel » tab (steps as cards, forms) and « Texte » tab (the workout text). -->
 <dialog class="editor" id="editDialog" aria-labelledby="editT">
-  <h2 id="editT">Modifier la séance</h2>
-  <textarea id="src" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="Collez ici la séance préparée par l’IA (appui long, puis « Coller »), ou écrivez-la : une étape par ligne, « Nom | quantité | info 1 | info 2 | note »."></textarea>
-  <p class="edStatus" id="editStatus"></p>
-  <div class="edBtns">
-    <button type="button" class="cancel" id="editCancel">Annuler</button>
-    <button type="button" class="save" id="editSave">Valider</button>
+  <div class="edHd">
+    <button type="button" class="edB" id="editCancel">Annuler</button>
+    <h2 id="editT">Modifier la séance</h2>
+    <button type="button" class="edB ok" id="editSave">Valider</button>
   </div>
+  <div class="edTabs" role="tablist" aria-label="Mode d’édition">
+    <button type="button" role="tab" id="tabVis" aria-selected="true">Visuel</button>
+    <button type="button" role="tab" id="tabTxt" aria-selected="false">Texte</button>
+  </div>
+  <div class="edVis" id="edVis">
+    <p class="edNote warn" id="edComments" hidden>Les lignes de commentaire (« # … ») du texte seront retirées en validant.</p>
+    <div class="edErr" id="edErr" hidden></div>
+    <button type="button" class="edInfo" id="edInfo"></button>
+    <div class="k">Déroulé</div>
+    <div class="edList" id="edList"></div>
+    <p class="edHint" id="edHint"></p>
+  </div>
+  <div class="edTxt" id="edTxt" hidden>
+    <textarea id="src" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="Collez ici la séance préparée par l’IA (appui long, puis « Coller »), ou écrivez-la : une étape par ligne, « Nom | quantité | info 1 | info 2 | note »."></textarea>
+    <p class="edStatus" id="editStatus"></p>
+  </div>
+  <div class="edFoot" id="edFoot">
+    <div class="tot"><b class="num" id="edTot"></b><span id="edTotS"></span></div>
+    <button type="button" class="edAdd" id="edAdd">＋ Ajouter</button>
+  </div>
+  <div class="edToast" id="edToast" role="status" hidden><span id="edToastT"></span><button type="button" id="edUndo">Annuler</button></div>
 </dialog>
 <!-- User manual (manuel.html) in a full-screen frame, over the current screen (a running workout keeps going).
      Its « ‹ Retour » button or Esc closes it. -->
