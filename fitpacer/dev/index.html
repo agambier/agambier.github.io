@@ -9,10 +9,10 @@
 <link rel="apple-touch-icon" href="/fitpacer/dev/apple-touch-icon-dev.png">
 <title>FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/dev/assets/main-B8XrtcC8.js"></script>
-  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-DRPi0Qhk.js">
+  <script type="module" crossorigin src="/fitpacer/dev/assets/main-b_yz_rIo.js"></script>
+  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-B4mIqGJ7.js">
   <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/version-DUwlkYKb.css">
-  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-BRi9g-bf.css">
+  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-DtO_Wi14.css">
 <link rel="manifest" href="/fitpacer/dev/manifest.webmanifest"></head>
 <body>
 <header class="top">
@@ -72,13 +72,14 @@
       </div>
     </div>
     <div id="progBox">
-    <div class="tools">
-      <button class="strong" id="pasteBtn" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="2.5" width="8" height="4" rx="1"/><path d="M16 4.5h2a2 2 0 0 1 2 2V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6.5a2 2 0 0 1 2-2h2"/></svg>Coller</button>
-      <button id="loadBtn" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5V18a1.5 1.5 0 0 0 1.5 1.5h15A1.5 1.5 0 0 0 21 18V9a1.5 1.5 0 0 0-1.5-1.5h-8L9.5 5h-5A1.5 1.5 0 0 0 3 6.5z"/></svg>Charger</button>
-      <button id="editBtn" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg>Modifier</button>
-      <button id="clearBtn" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6h17M9 6V4h6v2M18.5 6l-1 14.5h-11L5.5 6M10 10.5v6M14 10.5v6"/></svg>Effacer</button>
+    <!-- Workout actions (v26.11.24, option B of 21/11): paste line, then the title with Modify / Share / « ⋯ » (sheet below). -->
+    <button class="pasteLine" id="pasteBtn" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="2.5" width="8" height="4" rx="1"/><path d="M16 4.5h2a2 2 0 0 1 2 2V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6.5a2 2 0 0 1 2-2h2"/></svg>Coller une autre séance</button>
+    <div class="progHead">
+      <h1 id="planTitle">Programme</h1>
+      <button class="rnd" id="editBtn" type="button" aria-label="Modifier la séance" title="Modifier"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg></button>
+      <button class="rnd" id="shareProgBtn" type="button" aria-label="Partager la séance" title="Partager"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.8l7.4-4.4M8.3 13.2l7.4 4.4"/></svg></button>
+      <button class="rnd" id="moreBtn" type="button" aria-label="Plus d’actions sur la séance" aria-haspopup="dialog" title="Plus"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="19" cy="12" r="1.7"/></svg></button>
     </div>
-    <h1 id="planTitle">Programme</h1>
     <div class="errCard" id="errCard" hidden>
       <span class="k" id="errHead"></span>
       <ul id="errors"></ul>
@@ -291,6 +292,20 @@
   </div>
 </dialog>
 <!-- Workout text editor (full screen). Back button / Esc = Annuler. -->
+<!-- « ⋯ » of the program screen: keep or send the workout, replace it. -->
+<dialog class="sheetDlg" id="moreDialog" aria-labelledby="moreT">
+  <div class="hdl"></div>
+  <h3 id="moreT">Séance</h3>
+  <div class="k">Garder ou envoyer</div>
+  <button type="button" id="moreShare"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.8l7.4-4.4M8.3 13.2l7.4 4.4"/></svg></span><span><b>Partager…</b><small>Message, e-mail, Drive, l’IA… (fichier texte)</small></span></button>
+  <button type="button" id="saveProgBtn"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v2.5A1.5 1.5 0 0 0 5.5 21h13a1.5 1.5 0 0 0 1.5-1.5V17"/></svg></span><span><b>Enregistrer sur le téléphone</b><small>Fichier texte dans Téléchargements, à rouvrir avec « Charger »</small></span></button>
+  <button type="button" id="copyProgBtn"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4h-9A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16H8"/></svg></span><span><b>Copier le texte</b><small>Pour le coller où vous voulez</small></span></button>
+  <div class="k">Remplacer</div>
+  <button type="button" id="morePaste"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="2.5" width="8" height="4" rx="1"/><path d="M16 4.5h2a2 2 0 0 1 2 2V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6.5a2 2 0 0 1 2-2h2"/></svg></span><span><b>Coller une autre séance</b></span></button>
+  <button type="button" id="loadBtn"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5V18a1.5 1.5 0 0 0 1.5 1.5h15A1.5 1.5 0 0 0 21 18V9a1.5 1.5 0 0 0-1.5-1.5h-8L9.5 5h-5A1.5 1.5 0 0 0 3 6.5z"/></svg></span><span><b>Charger un fichier</b></span></button>
+  <button type="button" id="clearBtn" class="del"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6h17M9 6V4h6v2M18.5 6l-1 14.5h-11L5.5 6M10 10.5v6M14 10.5v6"/></svg></span><span><b>Effacer la séance</b></span></button>
+</dialog>
+<div class="progToast" id="progToast" role="status" hidden></div>
 <!-- Workout editor (src/editor.ts): « Visuel » tab (steps as cards, forms) and « Texte » tab (the workout text). -->
 <dialog class="editor" id="editDialog" aria-labelledby="editT">
   <div class="edHd">
