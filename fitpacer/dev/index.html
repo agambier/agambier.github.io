@@ -9,10 +9,10 @@
 <link rel="apple-touch-icon" href="/fitpacer/dev/apple-touch-icon-dev.png">
 <title>FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/dev/assets/main-BsZ7wjzx.js"></script>
-  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-dttM8mTc.js">
+  <script type="module" crossorigin src="/fitpacer/dev/assets/main-D0H27Qhr.js"></script>
+  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-dZpi7zEs.js">
   <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/version-DUwlkYKb.css">
-  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-BMjYPADl.css">
+  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-DQZdT_s7.css">
 <link rel="manifest" href="/fitpacer/dev/manifest.webmanifest"></head>
 <body>
 <header class="top">
@@ -291,23 +291,24 @@
 </dialog>
 <!-- History of the kept sessions (full screen): by month, newest first; tap = report, ⋮ = actions. -->
 <dialog class="fullDlg histDlg" id="histDialog" aria-labelledby="histT">
-  <div class="fh"><button type="button" id="histBack">‹ Retour</button><h2 id="histT">Historique</h2></div>
+  <div class="fh"><button type="button" id="histBack">‹ Retour</button><h2 id="histT">Historique</h2>
+    <button type="button" class="histMoreBtn" id="histMoreBtn" aria-label="Options de l’historique" aria-haspopup="menu" aria-expanded="false" aria-controls="histMenu">⋮</button>
+    <!-- Options of the history (top right): keep setting, save / restore (coming soon), erase all. -->
+    <nav class="menu histMenu" id="histMenu" role="menu" hidden>
+      <button type="button" role="menuitemcheckbox" class="keepItem" id="histKeepAll" aria-checked="false">Garder mes séances<small>Chaque séance terminée va dans l’historique</small></button>
+      <button type="button" role="menuitem" id="histSave">Sauvegarder<small>Dans un fichier (Drive…) · bientôt</small></button>
+      <button type="button" role="menuitem" id="histRestore">Restaurer<small>Depuis un fichier de sauvegarde · bientôt</small></button>
+      <button type="button" role="menuitem" class="histClear" id="histClear">Tout effacer</button>
+      <p class="histPriv">Tout reste sur ce téléphone : rien n’est envoyé sur Internet.</p>
+    </nav>
+  </div>
   <div class="histIn">
     <div class="histEmpty" id="histEmpty" hidden>
       <b>Aucune séance dans l’historique</b>
-      <p>Pour garder une séance, touchez « ☆ Garder dans l’historique » à la fin de la séance. Ou activez « Garder mes séances » ci-dessous : chaque séance terminée ira dans l’historique.</p>
+      <p>Pour garder une séance, touchez « ☆ Garder dans l’historique » à la fin de la séance. Ou activez « Garder mes séances » (menu ⋮ en haut à droite) : chaque séance terminée ira dans l’historique.</p>
+      <p>Tout reste sur ce téléphone. Si vous effacez les données de l’app (ou la désinstallez), l’historique est perdu.</p>
     </div>
     <div id="histList"></div>
-    <div class="histData">
-      <div class="k">Mes données</div>
-      <button type="button" class="histKeep" id="histKeepAll" role="switch" aria-checked="false"><span>Garder mes séances automatiquement<small>Sinon, seulement celles où vous touchez « ☆ Garder ».</small></span><i class="sw" aria-hidden="true"></i></button>
-      <div class="histBtns">
-        <button type="button" id="histSave"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></svg>Sauvegarder</button>
-        <button type="button" id="histRestore"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5V9M7 14l5-5 5 5M4.5 3.5h15"/></svg>Restaurer</button>
-      </div>
-      <button type="button" class="histClear" id="histClear">Tout effacer</button>
-      <p class="help">Tout reste sur ce téléphone : rien n’est envoyé sur Internet. Si vous effacez les données de l’app (ou la désinstallez), l’historique est perdu.</p>
-    </div>
   </div>
   <div class="progToast undoToast" id="undoToast" role="status" hidden><span id="undoTxt"></span><button type="button" id="undoBtn">Annuler</button></div>
 </dialog>
