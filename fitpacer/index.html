@@ -9,8 +9,8 @@
 <link rel="apple-touch-icon" href="/fitpacer/apple-touch-icon.png">
 <title>FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/assets/main-B2OmT9Lm.js"></script>
-  <link rel="modulepreload" crossorigin href="/fitpacer/assets/version-BNLjtkPd.js">
+  <script type="module" crossorigin src="/fitpacer/assets/main-CSqJqTCC.js"></script>
+  <link rel="modulepreload" crossorigin href="/fitpacer/assets/version-Shvznf4k.js">
   <link rel="stylesheet" crossorigin href="/fitpacer/assets/version-CEnomOl5.css">
   <link rel="stylesheet" crossorigin href="/fitpacer/assets/main-hfSlPM4Z.css">
 <link rel="manifest" href="/fitpacer/manifest.webmanifest"></head>
@@ -41,7 +41,7 @@
   <div class="hr stale num" id="hrBox"><span class="v" id="hrVal">--</span><span class="u">bpm</span></div>
   <button class="icon warnBtn" id="warnBtn" type="button" aria-haspopup="dialog" hidden><span aria-hidden="true">!</span><span class="n num" id="warnN"></span></button>
   <button class="icon" id="voiceBtn" type="button" aria-pressed="true" title="Annonces vocales">🔊</button>
-  <button class="bt" id="btBtn" data-s="off" type="button">Connecter la montre</button>
+  <button class="bt" id="btBtn" data-s="off" type="button">Connecter le cardio</button>
  </div>
 </header>
 
@@ -343,7 +343,7 @@
 <dialog class="dialog info" id="welcomeDialog" aria-labelledby="welcomeT">
   <img class="aboutIcon small" src="/fitpacer/favicon.svg" alt="" width="64" height="64">
   <h2 id="welcomeT" class="center">Bienvenue dans FitPacer</h2>
-  <p>FitPacer vous accompagne pendant vos séances de sport, à la maison ou en salle : chrono, répétitions, vitesse et pente, annonces vocales, bips, et fréquence cardiaque de votre montre.</p>
+  <p>FitPacer vous accompagne pendant vos séances de sport, à la maison ou en salle : chrono, répétitions, vitesse et pente, annonces vocales, bips, et fréquence cardiaque de votre ceinture cardio ou de votre montre.</p>
   <ul>
     <li><b>Préparez la séance</b> : écrivez-la vous-même, ou demandez à une IA (Claude, ChatGPT…) de la générer (bouton ci-dessous pour lui apprendre le format). Collez-la ou chargez-la depuis un fichier.</li>
     <li><b>Faites la séance</b> : l’app vous guide étape par étape.</li>
@@ -388,7 +388,7 @@
 </dialog>
 
 <dialog class="dialog" id="watchDialog" aria-labelledby="watchQ">
-  <p class="dq" id="watchQ">La montre n’est pas connectée.<br>Voulez-vous la connecter ?</p>
+  <p class="dq" id="watchQ">Le cardio n’est pas connecté.<br>Voulez-vous le connecter ?</p>
   <div class="dbtns">
     <button class="primary" id="watchYes" type="button">Oui, connecter</button>
     <button class="ghost" id="watchNo" type="button">Non, démarrer sans</button>
