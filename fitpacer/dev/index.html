@@ -9,10 +9,10 @@
 <link rel="apple-touch-icon" href="/fitpacer/dev/apple-touch-icon-dev.png">
 <title>FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/dev/assets/main-C7bp_69-.js"></script>
-  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-CtufxBiz.js">
+  <script type="module" crossorigin src="/fitpacer/dev/assets/main-Cs5N1Yce.js"></script>
+  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-CrYQiICd.js">
   <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/version-DUwlkYKb.css">
-  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-BZliO4C-.css">
+  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-BWTVZrpQ.css">
 <link rel="manifest" href="/fitpacer/dev/manifest.webmanifest"></head>
 <body>
 <header class="top">
@@ -294,8 +294,8 @@
     <nav class="menu histMenu" id="histMenu" role="menu" hidden>
       <button type="button" role="menuitemcheckbox" class="keepItem" id="histKeepAll" aria-checked="false">Garder mes séances<small>Chaque séance terminée va dans l’historique</small></button>
       <button type="button" role="menuitem" id="histSelectBtn">Sélectionner des séances<small>Pour en supprimer ou télécharger plusieurs d’un coup</small></button>
-      <button type="button" role="menuitem" id="histSave">Sauvegarder<small>Dans un fichier (Drive…) · bientôt</small></button>
-      <button type="button" role="menuitem" id="histRestore">Restaurer<small>Depuis un fichier de sauvegarde · bientôt</small></button>
+      <button type="button" role="menuitem" id="histSave">Sauvegarder<small>Toutes vos séances dans un fichier (Drive…)</small></button>
+      <button type="button" role="menuitem" id="histRestore">Restaurer<small>Depuis un fichier de sauvegarde</small></button>
       <button type="button" role="menuitem" class="histClear" id="histClear">Tout effacer</button>
       <p class="histPriv">Tout reste sur ce téléphone : rien n’est envoyé sur Internet.</p>
     </nav>
@@ -336,6 +336,23 @@
   <div class="k">Séance</div><div class="fChips" id="fTitle"></div>
   <div class="k">Période</div><div class="fChips" id="fPeriod"></div>
   <div class="fFoot"><button type="button" id="fReset">Effacer</button><button type="button" class="go" id="fApply"></button></div>
+</dialog>
+<!-- Restore a backup (core/backup.ts): preview, then « Ajouter » (default) or « Remplacer tout l’historique ». -->
+<input type="file" id="restoreIn" accept=".txt,.json,text/plain,application/json" hidden>
+<dialog class="sheetDlg restoreDlg" id="restoreDlg" aria-labelledby="rsT">
+  <div class="hdl"></div>
+  <h3 id="rsT">Restaurer une sauvegarde</h3>
+  <p class="rsSub" id="rsSub"></p>
+  <div class="rsCounts">
+    <div class="new"><b id="rsNew"></b><span>nouvelles <small>pas sur ce téléphone</small></span></div>
+    <div class="chg"><b id="rsChg"></b><span>déjà là, mais différentes <small>modifiées d’un côté</small></span></div>
+    <div class="same"><b id="rsSame"></b><span>déjà là, identiques</span></div>
+  </div>
+  <div class="k">Comment restaurer ?</div>
+  <label class="rsOpt"><input type="radio" name="rsMode" value="add" checked><span><b>Ajouter<em>conseillé</em></b><small id="rsAddTxt"></small></span></label>
+  <label class="rsOpt"><input type="radio" name="rsMode" value="replace"><span><b>Remplacer tout l’historique</b><small>Le téléphone repart exactement de la sauvegarde.</small></span></label>
+  <p class="rsWarn" id="rsWarn" hidden></p>
+  <div class="fFoot"><button type="button" id="rsCancel">Annuler</button><button type="button" class="go" id="rsGo"></button></div>
 </dialog>
 <!-- Actions on a session of the history (⋮). -->
 <dialog class="sheetDlg" id="histSheet" aria-labelledby="histSheetT">
