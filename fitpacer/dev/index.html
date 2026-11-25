@@ -9,10 +9,10 @@
 <link rel="apple-touch-icon" href="/fitpacer/dev/apple-touch-icon-dev.png">
 <title>FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/dev/assets/main-dmnDACdH.js"></script>
-  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-iojV_bR8.js">
+  <script type="module" crossorigin src="/fitpacer/dev/assets/main-CHZtM3ar.js"></script>
+  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-BMFckjHc.js">
   <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/version-DUwlkYKb.css">
-  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-B4tXialy.css">
+  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-Bo7D9vRK.css">
 <link rel="manifest" href="/fitpacer/dev/manifest.webmanifest"></head>
 <body>
 <header class="top">
@@ -333,14 +333,16 @@
   </div>
   <div class="progToast undoToast" id="undoToast" role="status" hidden><span id="undoTxt"></span><button type="button" id="undoBtn">Annuler</button></div>
 </dialog>
-<!-- « Filtrer » of the history: sort, type, session, period. Applied at once (the list behind follows). -->
+<!-- « Filtrer » of the history: sort, type, watch sport, session, period. Applied at once (the list behind follows).
+     Folded rows (variant 1 chosen on 25/11/2026): one row per criterion with its choice, a touch unfolds its chips. -->
 <dialog class="sheetDlg histFilter" id="histFilter" aria-labelledby="histFilterT">
   <div class="hdl"></div>
   <h3 id="histFilterT">Filtrer et trier</h3>
-  <div class="k">Trier</div><div class="fChips" id="fSort"></div>
-  <div class="k">Type</div><div class="fChips" id="fType"></div>
-  <div class="k">Séance</div><div class="fChips" id="fTitle"></div>
-  <div class="k">Période</div><div class="fChips" id="fPeriod"></div>
+  <div class="fGrp"><button type="button" class="fRow" data-for="fSort" aria-expanded="false"><span class="l">Trier</span><span class="v" id="fSortV"></span><span class="c">›</span></button><div class="fChips" id="fSort" hidden></div></div>
+  <div class="fGrp"><button type="button" class="fRow" data-for="fType" aria-expanded="false"><span class="l">Type</span><span class="v" id="fTypeV"></span><span class="c">›</span></button><div class="fChips" id="fType" hidden></div></div>
+  <div class="fGrp" id="fSportG"><button type="button" class="fRow" data-for="fSport" aria-expanded="false"><span class="l">Sport sur la montre</span><span class="v" id="fSportV"></span><span class="c">›</span></button><div class="fChips" id="fSport" hidden></div></div>
+  <div class="fGrp"><button type="button" class="fRow" data-for="fTitle" aria-expanded="false"><span class="l">Séance</span><span class="v" id="fTitleV"></span><span class="c">›</span></button><div class="fChips" id="fTitle" hidden></div></div>
+  <div class="fGrp"><button type="button" class="fRow" data-for="fPeriod" aria-expanded="false"><span class="l">Période</span><span class="v" id="fPeriodV"></span><span class="c">›</span></button><div class="fChips" id="fPeriod" hidden></div></div>
   <div class="fFoot"><button type="button" id="fReset">Effacer</button><button type="button" class="go" id="fApply"></button></div>
 </dialog>
 <!-- Restore a backup (core/backup.ts): preview, then « Ajouter » (default) or « Remplacer tout l’historique ». -->
