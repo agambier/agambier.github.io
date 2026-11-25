@@ -9,10 +9,10 @@
 <link rel="apple-touch-icon" href="/fitpacer/dev/apple-touch-icon-dev.png">
 <title>FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/dev/assets/main-D6bQCzq8.js"></script>
-  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-B4u-CfyX.js">
+  <script type="module" crossorigin src="/fitpacer/dev/assets/main-DVe5JaJ1.js"></script>
+  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-yz2I6hFd.js">
   <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/version-DUwlkYKb.css">
-  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-C10nDR6C.css">
+  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-BfYMK8Dw.css">
 <link rel="manifest" href="/fitpacer/dev/manifest.webmanifest"></head>
 <body>
 <header class="top">
@@ -228,6 +228,8 @@
     </fieldset>
     <label for="comment">Commentaire</label>
     <textarea id="comment" placeholder="Ex. : 8 pompes seulement à la 3e série, gainage facile, salle chaude…"></textarea>
+    <!-- « Étiquettes » (decision of 25/11/2026, variant B): one row, the choice in a sheet (#tagDlg). -->
+    <button type="button" class="tagRow" id="tagBtn" aria-haspopup="dialog"><span class="l">Étiquettes</span><span class="v" id="tagV"></span><span class="c" aria-hidden="true">›</span></button>
     <div class="measures">
       <div><label for="weight">Poids (facultatif)</label>
         <div class="row"><input type="text" id="weight" inputmode="decimal" autocomplete="off" placeholder="82,4"> <span class="help inline">kg</span></div></div>
@@ -342,8 +344,20 @@
   <div class="fGrp"><button type="button" class="fRow" data-for="fType" aria-expanded="false"><span class="l">Type</span><span class="v" id="fTypeV"></span><span class="c">›</span></button><div class="fChips" id="fType" hidden></div></div>
   <div class="fGrp" id="fSportG"><button type="button" class="fRow" data-for="fSport" aria-expanded="false"><span class="l">Sport sur la montre</span><span class="v" id="fSportV"></span><span class="c">›</span></button><div class="fChips" id="fSport" hidden></div></div>
   <div class="fGrp"><button type="button" class="fRow" data-for="fTitle" aria-expanded="false"><span class="l">Séance</span><span class="v" id="fTitleV"></span><span class="c">›</span></button><div class="fChips" id="fTitle" hidden></div></div>
+  <div class="fGrp" id="fTagG"><button type="button" class="fRow" data-for="fTag" aria-expanded="false"><span class="l">Étiquettes</span><span class="v" id="fTagV"></span><span class="c">›</span></button><div class="fChips" id="fTag" hidden></div></div>
   <div class="fGrp"><button type="button" class="fRow" data-for="fPeriod" aria-expanded="false"><span class="l">Période</span><span class="v" id="fPeriodV"></span><span class="c">›</span></button><div class="fChips" id="fPeriod" hidden></div></div>
   <div class="fFoot"><button type="button" id="fReset">Effacer</button><button type="button" class="go" id="fApply"></button></div>
+</dialog>
+<!-- Tags of the report: chips of the list kept on the phone (touch = add / remove), a new one, « Modifier la liste » (✕). -->
+<dialog class="sheetDlg tagDlg" id="tagDlg" aria-labelledby="tagT">
+  <div class="hdl"></div>
+  <h3 id="tagT">Étiquettes</h3>
+  <p class="tagSub" id="tagSub"></p>
+  <div class="fChips" id="tagChips"></div>
+  <button type="button" class="tagEdit" id="tagEdit"></button>
+  <label for="tagIn">Nouvelle étiquette</label>
+  <form class="tagAdd" id="tagAdd"><input type="text" id="tagIn" maxlength="30" autocomplete="off" enterkeyhint="done" placeholder="Ex. : en extérieur"><button type="submit">Ajouter</button></form>
+  <button type="button" class="go tagOk" id="tagOk">OK</button>
 </dialog>
 <!-- Restore a backup (core/backup.ts): preview, then « Ajouter » (default) or « Remplacer tout l’historique ». -->
 <input type="file" id="restoreIn" accept=".txt,.json,text/plain,application/json" hidden>
