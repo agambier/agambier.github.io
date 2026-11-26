@@ -9,10 +9,10 @@
 <link rel="apple-touch-icon" href="/fitpacer/dev/apple-touch-icon-dev.png">
 <title>FitPacer</title>
 <script>try{var t=localStorage.getItem("fitpacer.theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <script type="module" crossorigin src="/fitpacer/dev/assets/main-BfMwZe-S.js"></script>
-  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-CghnCiT9.js">
+  <script type="module" crossorigin src="/fitpacer/dev/assets/main-Dt-MOtIm.js"></script>
+  <link rel="modulepreload" crossorigin href="/fitpacer/dev/assets/version-BYLg0IMT.js">
   <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/version-DUwlkYKb.css">
-  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-GYPgEUN1.css">
+  <link rel="stylesheet" crossorigin href="/fitpacer/dev/assets/main-hfSlPM4Z.css">
 <link rel="manifest" href="/fitpacer/dev/manifest.webmanifest"></head>
 <body>
 <header class="top">
@@ -26,29 +26,22 @@
   <button class="menuBtn" id="menuBtn" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="menu" aria-label="Menu">☰<span class="updDot" id="updDot" hidden></span></button>
   <nav class="menu" id="menu" role="menu" hidden>
     <button type="button" role="menuitem" class="updItem" id="updateBtn" hidden>Mettre à jour l’app<small>Nouvelle version prête</small></button>
-    <!-- Menu tidied up on 24/11/2026: groups with a title, icons, theme on its line, « Aide et infos » folded. -->
-    <div class="mgrp">Mes séances</div>
-    <!-- History of the kept sessions (core/history.ts), hidden during a session. -->
-    <button type="button" role="menuitem" id="histMenuBtn"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4.5V8h3.5"/><path d="M12 8v4.5l3 2"/></svg>Historique</button>
-    <button type="button" role="menuitem" data-open="claudeDialog"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v10H9l-4 4z"/><path d="M9 9.5h6M9 12h4"/></svg>Consignes pour l’IA</button>
-    <div class="mgrp">Réglages</div>
-    <div class="mtheme" role="radiogroup" aria-label="Thème"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor"/></svg><span>Thème</span>
-      <span class="seg2"><button type="button" role="radio" class="themeItem" data-theme-choice="dark" aria-checked="false">Sombre</button><button type="button" role="radio" class="themeItem" data-theme-choice="light" aria-checked="false">Clair</button></span>
+    <button type="button" role="menuitem" id="helpBtn">Aide</button>
+    <button type="button" role="menuitem" data-open="claudeDialog">Consignes pour l’IA</button>
+    <button type="button" role="menuitem" class="subToggle" id="themeBtn" aria-haspopup="menu" aria-expanded="false" aria-controls="themeMenu">Thème</button>
+    <div class="submenu" id="themeMenu" role="menu" aria-label="Thème" hidden>
+      <button type="button" role="menuitemradio" class="themeItem" data-theme-choice="dark" aria-checked="false">Sombre</button>
+      <button type="button" role="menuitemradio" class="themeItem" data-theme-choice="light" aria-checked="false">Clair</button>
     </div>
-    <div class="mgrp">Aide &amp; infos</div>
-    <button type="button" role="menuitem" class="subToggle" id="infoBtn" aria-haspopup="menu" aria-expanded="false" aria-controls="infoMenu"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.6a2.5 2.5 0 1 1 3.4 2.3c-.7.3-1 .8-1 1.5v.4"/><circle cx="12" cy="16.8" r=".6" fill="currentColor"/></svg>Aide et infos</button>
-    <div class="submenu" id="infoMenu" role="menu" aria-label="Aide et infos" hidden>
-      <button type="button" role="menuitem" id="helpBtn"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.6a2.5 2.5 0 1 1 3.4 2.3c-.7.3-1 .8-1 1.5v.4"/><circle cx="12" cy="16.8" r=".6" fill="currentColor"/></svg>Aide</button>
-      <button type="button" role="menuitem" id="whatsNewBtn"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.3 5 5.2.5-3.9 3.5 1.1 5.2L12 15l-4.7 2.7 1.1-5.2L4.5 9l5.2-.5z"/></svg>Quoi de neuf ?</button>
-      <button type="button" role="menuitem" data-open="aboutDialog"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5"/><circle cx="12" cy="7.8" r=".6" fill="currentColor"/></svg>À propos</button>
-    </div>
+    <button type="button" role="menuitem" id="whatsNewBtn">Quoi de neuf ?</button>
+    <button type="button" role="menuitem" data-open="aboutDialog">À propos</button>
   </nav>
  </div>
  <div class="hrRow">
   <div class="hr stale num" id="hrBox"><span class="v" id="hrVal">--</span><span class="u">bpm</span></div>
   <button class="icon warnBtn" id="warnBtn" type="button" aria-haspopup="dialog" hidden><span aria-hidden="true">!</span><span class="n num" id="warnN"></span></button>
   <button class="icon" id="voiceBtn" type="button" aria-pressed="true" title="Annonces vocales">🔊</button>
-  <button class="bt" id="btBtn" data-s="off" type="button">Connecter le cardio</button>
+  <button class="bt" id="btBtn" data-s="off" type="button">Connecter la montre</button>
  </div>
 </header>
 
@@ -228,8 +221,6 @@
     </fieldset>
     <label for="comment">Commentaire</label>
     <textarea id="comment" placeholder="Ex. : 8 pompes seulement à la 3e série, gainage facile, salle chaude…"></textarea>
-    <!-- « Étiquettes » (decision of 25/11/2026, variant B): one row, the choice in a sheet (#tagDlg). -->
-    <button type="button" class="tagRow" id="tagBtn" aria-haspopup="dialog"><span class="l">Étiquettes</span><span class="v" id="tagV"></span><span class="c" aria-hidden="true">›</span></button>
     <div class="measures">
       <div><label for="weight">Poids (facultatif)</label>
         <div class="row"><input type="text" id="weight" inputmode="decimal" autocomplete="off" placeholder="82,4"> <span class="help inline">kg</span></div></div>
@@ -247,9 +238,6 @@
       <button id="viewBtn" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>Visualiser</button>
     </div>
     <p class="help">Envoyez le fichier à l’IA avec le fichier .fit de la montre.</p>
-    <!-- « Garder dans l’historique » (decision of 23/11/2026): kept on this phone only. -->
-    <button class="keepBtn" id="keepBtn" type="button" aria-pressed="false"></button>
-    <p class="help keepHelp" id="keepHelp"></p>
     <button class="primary" id="againBtn" type="button">Revenir au programme</button>
   </section>
 </main>
@@ -292,104 +280,6 @@
   <div class="fh"><button type="button" id="planBack">‹ Retour</button><h2 id="planT">Déroulé de la séance</h2></div>
   <div class="planTot"><span class="lab">Durée totale estimée</span><span class="big num" id="planTot"></span></div>
   <ul class="plan num" id="plan"></ul>
-</dialog>
-<!-- History of the kept sessions (full screen): by month, newest first; tap = report, ⋮ = actions. -->
-<dialog class="fullDlg histDlg" id="histDialog" aria-labelledby="histT">
-  <div class="fh"><button type="button" id="histBack">‹ Retour</button><h2 id="histT">Historique</h2>
-    <button type="button" class="rnd histMoreBtn" id="histMoreBtn" aria-label="Options de l’historique" aria-haspopup="menu" aria-expanded="false" aria-controls="histMenu" title="Plus"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="19" cy="12" r="1.7"/></svg></button>
-    <!-- Options of the history (top right): keep setting, save / restore (coming soon), erase all. -->
-    <nav class="menu histMenu" id="histMenu" role="menu" hidden>
-      <button type="button" role="menuitemcheckbox" class="keepItem" id="histKeepAll" aria-checked="false">Garder mes séances<small>Chaque séance terminée va dans l’historique</small></button>
-      <button type="button" role="menuitem" id="histSelectBtn">Sélectionner des séances<small>Pour en supprimer ou télécharger plusieurs d’un coup</small></button>
-      <button type="button" role="menuitem" id="histSave">Sauvegarder<small>Toutes vos séances dans un fichier (Drive…)</small></button>
-      <button type="button" role="menuitem" id="histRestore">Restaurer<small>Depuis un fichier de sauvegarde</small></button>
-      <button type="button" role="menuitem" class="histClear" id="histClear">Tout effacer</button>
-      <p class="histPriv">Tout reste sur ce téléphone : rien n’est envoyé sur Internet.</p>
-    </nav>
-  </div>
-  <!-- Selection mode (⋯ › Sélectionner, or a long press on a session): replaces the header above. -->
-  <div class="histSelHead" id="histSelHead" hidden>
-    <button type="button" class="rnd" id="histSelClose" aria-label="Quitter la sélection"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-    <h2 id="histSelT">0 sélectionnée</h2>
-    <button type="button" class="histSelAll" id="histSelAll">Tout sélectionner</button>
-  </div>
-  <div class="histIn">
-    <!-- Search and « Filtrer » (variant B chosen on 23/11/2026): the filters in a panel, the list keeps the screen. -->
-    <div class="histBar" id="histBar">
-      <label class="histSearch"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg><input type="search" id="histSearch" placeholder="Rechercher" aria-label="Rechercher dans le titre et le commentaire" enterkeyhint="search" autocomplete="off"></label>
-      <button type="button" class="histFilterBtn" id="histFilterBtn" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>Filtrer<span class="n" id="histFilterN" hidden></span></button>
-    </div>
-    <div class="histFLine" id="histFLine" hidden><span id="histFTxt"></span><button type="button" id="histFClear">Effacer</button></div>
-    <p class="histTotal" id="histTotal" hidden></p>
-    <p class="histNone" id="histNone" hidden>Aucune séance ne correspond. <button type="button" id="histNoneClear">Effacer les filtres</button></p>
-    <div class="histEmpty" id="histEmpty" hidden>
-      <b>Aucune séance dans l’historique</b>
-      <p>Pour garder une séance, touchez « ☆ Garder dans l’historique » à la fin de la séance. Ou activez « Garder mes séances » (bouton ⋯ en haut à droite) : chaque séance terminée ira dans l’historique.</p>
-      <p>Tout reste sur ce téléphone. Si vous effacez les données de l’app (ou la désinstallez), l’historique est perdu.</p>
-    </div>
-    <div id="histList"></div>
-  </div>
-  <div class="histSelBar" id="histSelBar" hidden>
-    <button type="button" id="histSelDownload"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10l5 5 5-5M4.5 20.5h15"/></svg>Télécharger</button>
-    <button type="button" id="histSelTags"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12.6V4.5a1 1 0 0 1 1-1h8.1l8 8a1.4 1.4 0 0 1 0 2l-7.1 7.1a1.4 1.4 0 0 1-2 0z"/><circle cx="8" cy="8" r="1.6"/></svg>Étiquettes</button>
-    <button type="button" class="del" id="histSelDelete"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 7h15M9.5 7V4.5h5V7M6.5 7l1 13h9l1-13M10 11v5.5M14 11v5.5"/></svg><span id="histSelDelT">Supprimer</span></button>
-  </div>
-  <div class="progToast undoToast" id="undoToast" role="status" hidden><span id="undoTxt"></span><button type="button" id="undoBtn">Annuler</button></div>
-</dialog>
-<!-- « Filtrer » of the history: sort, type, watch sport, session, period. Applied at once (the list behind follows).
-     Folded rows (variant 1 chosen on 25/11/2026): one row per criterion with its choice, a touch unfolds its chips. -->
-<dialog class="sheetDlg histFilter" id="histFilter" aria-labelledby="histFilterT">
-  <div class="hdl"></div>
-  <h3 id="histFilterT">Filtrer et trier</h3>
-  <div class="fGrp"><button type="button" class="fRow" data-for="fSort" aria-expanded="false"><span class="l">Trier</span><span class="v" id="fSortV"></span><span class="c">›</span></button><div class="fChips" id="fSort" hidden></div></div>
-  <div class="fGrp"><button type="button" class="fRow" data-for="fType" aria-expanded="false"><span class="l">Type</span><span class="v" id="fTypeV"></span><span class="c">›</span></button><div class="fChips" id="fType" hidden></div></div>
-  <div class="fGrp" id="fSportG"><button type="button" class="fRow" data-for="fSport" aria-expanded="false"><span class="l">Sport sur la montre</span><span class="v" id="fSportV"></span><span class="c">›</span></button><div class="fChips" id="fSport" hidden></div></div>
-  <div class="fGrp" id="fTagG"><button type="button" class="fRow" data-for="fTag" aria-expanded="false"><span class="l">Étiquettes</span><span class="v" id="fTagV"></span><span class="c">›</span></button><div class="fChips" id="fTag" hidden></div></div>
-  <div class="fGrp"><button type="button" class="fRow" data-for="fPeriod" aria-expanded="false"><span class="l">Période</span><span class="v" id="fPeriodV"></span><span class="c">›</span></button><div class="fChips" id="fPeriod" hidden></div>
-    <div class="fDates" id="fDates" hidden><label>Du <input type="date" id="fFrom"></label><label>Au <input type="date" id="fTo"></label></div></div>
-  <div class="fFoot"><button type="button" id="fReset">Effacer</button><button type="button" class="go" id="fApply"></button></div>
-</dialog>
-<!-- Tags of a report, of a kept session (⋮) or of several (selection). Variant E (25/11/2026): every tag of the list kept
-     on the phone as a chip (touch = add / remove), a field on top that narrows them and creates one, « Modifier la liste » (✕). -->
-<dialog class="sheetDlg tagDlg" id="tagDlg" aria-labelledby="tagT">
-  <div class="hdl"></div>
-  <h3 id="tagT">Étiquettes</h3>
-  <p class="tagSub" id="tagSub" hidden></p>
-  <form class="tagFind" id="tagFind"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg><input type="text" id="tagIn" maxlength="30" autocomplete="off" enterkeyhint="done" placeholder="Chercher ou créer…" aria-label="Chercher ou créer une étiquette"></form>
-  <div class="k" id="tagK"></div>
-  <div class="fChips" id="tagChips"></div>
-  <p class="tagNote" id="tagNote" hidden></p>
-  <button type="button" class="tagEdit" id="tagEdit"></button>
-  <button type="button" class="go tagOk" id="tagOk">OK</button>
-</dialog>
-<!-- Restore a backup (core/backup.ts): preview, then « Ajouter » (default) or « Remplacer tout l’historique ». -->
-<input type="file" id="restoreIn" accept=".txt,.json,text/plain,application/json" hidden>
-<dialog class="sheetDlg restoreDlg" id="restoreDlg" aria-labelledby="rsT">
-  <div class="hdl"></div>
-  <h3 id="rsT">Restaurer une sauvegarde</h3>
-  <p class="rsSub" id="rsSub"></p>
-  <div class="rsCounts">
-    <div class="new"><b id="rsNew"></b><span>nouvelles <small>pas sur ce téléphone</small></span></div>
-    <div class="chg"><b id="rsChg"></b><span>déjà là, mais différentes <small>modifiées d’un côté</small></span></div>
-    <div class="same"><b id="rsSame"></b><span>déjà là, identiques</span></div>
-  </div>
-  <div class="k">Comment restaurer ?</div>
-  <label class="rsOpt"><input type="radio" name="rsMode" value="add" checked><span><b>Ajouter<em>conseillé</em></b><small id="rsAddTxt"></small></span></label>
-  <label class="rsOpt"><input type="radio" name="rsMode" value="replace"><span><b>Remplacer tout l’historique</b><small>Le téléphone repart exactement de la sauvegarde.</small></span></label>
-  <p class="rsWarn" id="rsWarn" hidden></p>
-  <div class="fFoot"><button type="button" id="rsCancel">Annuler</button><button type="button" class="go" id="rsGo"></button></div>
-</dialog>
-<!-- Actions on a session of the history (⋮). -->
-<dialog class="sheetDlg" id="histSheet" aria-labelledby="histSheetT">
-  <div class="hdl"></div>
-  <h3 id="histSheetT"></h3>
-  <div class="hsub" id="histSheetSub"></div>
-  <button type="button" id="histSee"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3v5h5M8.5 13h7M8.5 16.5h5"/></svg></span><span><b>Revoir le bilan</b><small>Courbe de FC, détail des étapes, rapport pour l’IA</small></span></button>
-  <button type="button" id="histTags"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12.6V4.5a1 1 0 0 1 1-1h8.1l8 8a1.4 1.4 0 0 1 0 2l-7.1 7.1a1.4 1.4 0 0 1-2 0z"/><circle cx="8" cy="8" r="1.6"/></svg></span><span><b>Étiquettes</b><small id="histTagsS"></small></span></button>
-  <button type="button" id="histShare"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.8l7.4-4.4M8.3 13.2l7.4 4.4"/></svg></span><span><b>Partager le rapport…</b><small>Message, e-mail, Drive, l’IA… (fichier texte)</small></span></button>
-  <button type="button" id="histDownload"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v2.5A1.5 1.5 0 0 0 5.5 21h13a1.5 1.5 0 0 0 1.5-1.5V17"/></svg></span><span><b>Télécharger le rapport</b><small>Fichier dans Téléchargements, à joindre ensuite</small></span></button>
-  <button type="button" id="histRedo"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v5h-5"/></svg></span><span><b>Refaire cette séance</b><small>Ouvre le même programme, prêt à démarrer</small></span></button>
-  <button type="button" class="del" id="histDel"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 7h15M9.5 7V4.5h5V7M6.5 7l1 13h9l1-13M10 11v5.5M14 11v5.5"/></svg></span><span><b>Supprimer de l’historique</b><small>« Annuler » possible juste après</small></span></button>
 </dialog>
 <!-- Report viewer (full screen, read-only). Back button / Esc closes it. -->
 <dialog class="fullDlg repDlg" id="repDialog" aria-labelledby="repDlgT">
@@ -453,7 +343,7 @@
 <dialog class="dialog info" id="welcomeDialog" aria-labelledby="welcomeT">
   <img class="aboutIcon small" src="/fitpacer/dev/favicon-dev.svg" alt="" width="64" height="64">
   <h2 id="welcomeT" class="center">Bienvenue dans FitPacer</h2>
-  <p>FitPacer vous accompagne pendant vos séances de sport, à la maison ou en salle : chrono, répétitions, vitesse et pente, annonces vocales, bips, et fréquence cardiaque de votre ceinture cardio ou de votre montre.</p>
+  <p>FitPacer vous accompagne pendant vos séances de sport, à la maison ou en salle : chrono, répétitions, vitesse et pente, annonces vocales, bips, et fréquence cardiaque de votre montre.</p>
   <ul>
     <li><b>Préparez la séance</b> : écrivez-la vous-même, ou demandez à une IA (Claude, ChatGPT…) de la générer (bouton ci-dessous pour lui apprendre le format). Collez-la ou chargez-la depuis un fichier.</li>
     <li><b>Faites la séance</b> : l’app vous guide étape par étape.</li>
@@ -498,7 +388,7 @@
 </dialog>
 
 <dialog class="dialog" id="watchDialog" aria-labelledby="watchQ">
-  <p class="dq" id="watchQ">Le cardio n’est pas connecté.<br>Voulez-vous le connecter ?</p>
+  <p class="dq" id="watchQ">La montre n’est pas connectée.<br>Voulez-vous la connecter ?</p>
   <div class="dbtns">
     <button class="primary" id="watchYes" type="button">Oui, connecter</button>
     <button class="ghost" id="watchNo" type="button">Non, démarrer sans</button>
